@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="9412c9bf-a7b2-481e-b42e-431f06aac221" version="1">
+  <Properties>
+    <Name>Quick Civ BE</Name>
+    <Stability>Alpha</Stability>
+    <Teaser>Play Beyond Earth more quickly</Teaser>
+    <Description></Description>
+    <Authors>bmaupin</Authors>
+    <HideSetupGame>0</HideSetupGame>
+    <AffectsSavedGames>0</AffectsSavedGames>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>0</ReloadAudioSystem>
+    <ReloadLandmarkSystem>0</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>0</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>0</ReloadUnitSystem>
+  </Properties>
+  <Dependencies />
+  <References />
+  <Blocks />
+  <Files>
+    <!-- <File md5="f85d4869cf6a0baea2ab6f06653b33e4" import="0">Lua/Quick_Civ_BE.lua</File> -->
+    <File md5="0cf693bf4a9085e87b5ff50abdab5e1b" import="1">XML/Quick_Civ_BE.xml</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>XML/Quick_Civ_BE.xml</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <!-- <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="Lua/Quick_Civ_BE.lua">
+      <Name>Logic</Name>
+      <Description>Logic</Description>
+    </EntryPoint>
+  </EntryPoints> -->
+</Mod>
