@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+    <GameOptions>
+        <Row>
+            <Type>GAMEOPTION_NO_ESPIONAGE</Type>
+            <Description>TXT_KEY_GAME_OPTION_NO_ESPIONAGE</Description>
+            <Help>TXT_KEY_GAME_OPTION_NO_ESPIONAGE_HELP</Help>
+        </Row>
+    </GameOptions>
+    <Language_en_US>
+        <Row Tag="TXT_KEY_GAME_OPTION_NO_ESPIONAGE">
+            <Text>No Covert Ops</Text>
+        </Row>
+        <Row Tag="TXT_KEY_GAME_OPTION_NO_ESPIONAGE_HELP">
+            <Text>Disables the Spy Agency wonder, effectively disabling Covert Ops altogether.</Text>
+        </Row>
+    </Language_en_US>
     <!-- <GameOptions>
         <!- Base game ->
         <Update>
