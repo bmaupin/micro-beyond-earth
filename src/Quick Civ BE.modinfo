@@ -21,8 +21,8 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="d7d035e7bf00994c10cd763ab048131d" import="0">Lua/Quick_Civ_BE.lua</File>
-    <File md5="738f8e360eb0a24abbb542f071c103f5" import="1">XML/Quick_Civ_BE.xml</File>
+    <File md5="96e31ccc3c74912ab6b9053f8257b42e" import="0">Lua/Quick_Civ_BE.lua</File>
+    <File md5="f75b20223115a4e51f706adcaf820b5a" import="1">XML/Quick_Civ_BE.xml</File>
   </Files>
   <Actions>
     <OnModActivated>
