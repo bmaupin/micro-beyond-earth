@@ -91,6 +91,14 @@
             </Set>
         </Update>
     </GameOptions> -->
+    <Victories>
+        <Update>
+            <Where Type="VICTORY_TIME" />
+            <Set>
+                <Permanent>false</Permanent>
+            </Set>
+        </Update>
+    </Victories>
     <Worlds>
         <Update>
             <Where Type="WORLDSIZE_DUEL" />
