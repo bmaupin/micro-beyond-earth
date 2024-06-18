@@ -1,27 +1,28 @@
+-- Abort all covert operations for all of the player's agents except for establish network
+function AbortCovertOperations(playerType)
+    if (PreGame.GetGameOption("GAMEOPTION_NO_COVERT_OPERATIONS") == 1) then
+        for i, agent in ipairs(Players[playerType]:GetCovertAgents()) do
+            if (agent:IsDoingOperation()) then
+                local operation = agent:GetOperation();
+                if (operation ~= nil) then
+                    if (operation.Type ~= GameInfo.CovertOperations["COVERT_OPERATION_ESTABLISH_NETWORK"].ID) then
+                        agent:AbortOperation();
+                    end
+                end
+            end
+        end
+    end
+end
+GameEvents.PlayerDoTurn.Add(AbortCovertOperations);
+
 function CanCityConstructBuilding(playerID, cityID, buildingID)
-    local player = Players[playerID]
-    local city = player:GetCityByID(cityID)
-
-    if (PreGame.GetGameOption("GAMEOPTION_NO_ESPIONAGE") == 1) then
-        -- Gives 3 agents
-        if buildingID == GameInfoTypes.BUILDING_SPY_AGENCY then
-            return false
-
+    if (PreGame.GetGameOption("GAMEOPTION_NO_COVERT_OPERATIONS") == 1) then
         -- Reduces cities max intrigue level by 2
-        elseif buildingID == GameInfoTypes.BUILDING_SURVEILLANCE_WEB then
-            return false
-
-        -- Disable buildings that grant extra agents
-        elseif buildingID == GameInfoTypes.BUILDING_CEL_CRADLE then
-            return false
-        elseif buildingID == GameInfoTypes.BUILDING_FEEDSITE_HUB then
-            return false
-        elseif buildingID == GameInfoTypes.BUILDING_COMMAND_CENTER then
-            return false
+        if buildingID == GameInfoTypes.BUILDING_SURVEILLANCE_WEB then
+            return false;
         end
     end
 
-    return true
+    return true;
 end
-
-GameEvents.CityCanConstruct.Add(CanCityConstructBuilding)
+GameEvents.CityCanConstruct.Add(CanCityConstructBuilding);

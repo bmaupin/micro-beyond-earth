@@ -1,7 +1,7 @@
 ## To do
 
 - [x] Mod map sizes
-- [ ] Add option to disable Covert Ops
+- [x] Add option to disable covert operations
 - [ ] Play with modded map sizes
 - [ ] Enable hidden game options
 - [ ] Disable buildings and wonders related to hidden game options
@@ -14,7 +14,7 @@
 #### Features
 
 - (In progress) Smaller maps: this alone has the biggest impact on the length of the game
-- (In progress) New game option added to disable Covert Ops
+- New game option added to disable covert operations. This automatically aborts all covert operations except for Establish Network, making it so that Covert Ops is only about gathering information.
 - Add ability to disable time victory in game options
 
 ## Known issues
