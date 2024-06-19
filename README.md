@@ -2,20 +2,20 @@
 
 - [x] Mod map sizes
 - [x] Add option to disable covert operations
+- [x] Give all cities a free Ultrasonic fence
 - [ ] Play with modded map sizes
 - [ ] Enable hidden game options
 - [ ] Disable buildings and wonders related to hidden game options
 - [ ] Update for Rising Tide DLC
-- [ ] Give all cities a free Ultrasonic fence?
-  - This prevents turns from auto-ending and can slow down the game quite a bit at the beginning. But would it be too big of a negative impact on the game?
 
 ## About
 
 #### Features
 
 - (In progress) Smaller maps: this alone has the biggest impact on the length of the game
-- New game option added to disable covert operations. This automatically aborts all covert operations except for Establish Network, making it so that Covert Ops is only about gathering information.
 - Add ability to disable time victory in game options
+- New game option added to disable covert operations. This automatically aborts all covert operations except for Establish Network, making it so that Covert Ops is only about gathering information.
+- New game option to give all cities a free Ultrasonic Fence. This effectively prevents showing the button that there are aliens that a city can attack, in order to speed up gameplay.
 
 ## Known issues
 

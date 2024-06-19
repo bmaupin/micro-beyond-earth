@@ -26,3 +26,13 @@ function CanCityConstructBuilding(playerID, cityID, buildingID)
     return true;
 end
 GameEvents.CityCanConstruct.Add(CanCityConstructBuilding);
+
+function GiveFreeUltrasonicFence(playerID, cityX, cityY)
+    if (PreGame.GetGameOption("GAMEOPTION_FREE_ULTRASONIC_FENCE") == 1) then
+        local city = Map.GetPlot(cityX, cityY):GetPlotCity();
+        if (city ~= nil) then
+            city:SetNumRealBuilding(GameInfoTypes["BUILDING_ULTRASONIC_FENCE"], 1);
+        end
+    end
+end
+GameEvents.PlayerCityFounded.Add(GiveFreeUltrasonicFence);

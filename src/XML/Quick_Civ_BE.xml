@@ -2,17 +2,28 @@
 <GameData>
     <GameOptions>
         <Row>
+            <Type>GAMEOPTION_FREE_ULTRASONIC_FENCE</Type>
+            <Description>TXT_KEY_GAME_OPTION_FREE_ULTRASONIC_FENCE</Description>
+            <Help>TXT_KEY_GAME_OPTION_FREE_ULTRASONIC_FENCE_HELP</Help>
+        </Row>
+        <Row>
             <Type>GAMEOPTION_NO_COVERT_OPERATIONS</Type>
             <Description>TXT_KEY_GAME_OPTION_NO_COVERT_OPERATIONS</Description>
             <Help>TXT_KEY_GAME_OPTION_NO_COVERT_OPERATIONS_HELP</Help>
         </Row>
     </GameOptions>
     <Language_en_US>
+        <Row Tag="TXT_KEY_GAME_OPTION_FREE_ULTRASONIC_FENCE">
+            <Text>Free Ultrasonic Fence</Text>
+        </Row>
+        <Row Tag="TXT_KEY_GAME_OPTION_FREE_ULTRASONIC_FENCE_HELP">
+            <Text>Give all cities a free Ultrasonic Fence in order to not show the button that there are aliens that a city can attack.</Text>
+        </Row>
         <Row Tag="TXT_KEY_GAME_OPTION_NO_COVERT_OPERATIONS">
             <Text>Disable Covert Operations</Text>
         </Row>
         <Row Tag="TXT_KEY_GAME_OPTION_NO_COVERT_OPERATIONS_HELP">
-            <Text>All covert operations except for establish network are automatically aborted, making it so that Covert Ops is only useful for seeing a city and getting basic information about it.</Text>
+            <Text>All covert operations except for Establish Network are automatically aborted, making it so that Covert Ops is only useful for seeing a city and getting basic information about it.</Text>
         </Row>
     </Language_en_US>
     <!-- <GameOptions>
