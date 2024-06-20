@@ -11,8 +11,11 @@
 1. Install missing dependencies as needed, e.g.
 
    ```
-   sudo apt install libopenal1:i386 libtbb2:i386
+   cp ~/.local/share/Steam/ubuntu12_32/steam-runtime/usr/lib/i386-linux-gnu/libopenal.so.1 .
+   cp ~/.local/share/Steam/ubuntu12_32/steam-runtime/usr/lib/i386-linux-gnu/libtbb.so.2 .
    ```
+
+   ⚠️ Don't install dependencies via the system package manager. In particular, Ubuntu's `libtbb2:i386` seems to make the game crash, typically in less than ten turns.
 
 #### Setup
 
