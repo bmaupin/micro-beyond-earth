@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 mod_name=$(yq -p xml -oy ".Mod.Properties.Name" src/*.modinfo)
+export dlc_name=$(echo "${mod_name}" | tr '[:upper:]' '[:lower:]' | tr " " _)
 mod_version=$(yq -p xml -oy ".Mod.+@version" "src/${mod_name}.modinfo")
 export mod_name_version="$(echo "${mod_name} (v ${mod_version})" | tr '[:upper:]' '[:lower:]')"
 
@@ -20,17 +21,26 @@ done
 IFS="$original_IFS"
 popd > /dev/null
 
-# Clean up previous mod package
+# Clean up previous packages
 rm -f "${mod_name_version}.civbemod"
+rm -f "${dlc_name}.zip"
 
-# Create the mod package
-temp_dir=$(mktemp -d -p $(pwd))
+# Copy the files to package
+temp_dir="${dlc_name}"
+mkdir "${dlc_name}"
 cp -ar src/. "${temp_dir}"
 pushd "${temp_dir}" > /dev/null
 mv "${mod_name}.modinfo" "${mod_name_version}.modinfo"
 # All files have to be renamed to lower-case in Linux for it to work (https://stackoverflow.com/a/152741)
 # This isn't needed for Proton but doesn't hurt anything either
 find . -depth -exec rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \;
-7z a -r ../"${mod_name_version}.civbemod" *
+
+# Create the mod package
+7z a -r '-x!*.civbepkg' ../"${mod_name_version}.civbemod" *
 popd > /dev/null
+
+# Create the DLC package
+zip -r "${dlc_name}.zip" "${dlc_name}" -x '*.modinfo'
+
+# Cleanup
 rm -rf "${temp_dir}"
