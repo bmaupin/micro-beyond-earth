@@ -3,6 +3,8 @@
 - [x] Mod map sizes
 - [x] Add option to disable covert operations
 - [x] Give all cities a free Ultrasonic fence
+- [ ] Package as DLC
+  - [ ] Add Lua to DLC config and test
 - [ ] Play with modded map sizes
 - [ ] Enable hidden game options
 - [ ] Disable buildings and wonders related to hidden game options

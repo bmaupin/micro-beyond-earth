@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CivBEPackage>
+  <GUID>{9412C9BF-A7B2-481E-B42E-431F06AAC221}</GUID>
+  <SteamApp></SteamApp>
+  <Version>1</Version>
+  <Key>5a90e3b9cd4b849a206809b2a552933b</Key>
+  <Priority>300</Priority>
+  <PTags>
+    <Tag>Version</Tag>
+  </PTags>
+  <Name>
+    <Value language="en_US">Quick Civ BE</Value>
+  </Name>
+  <Description>
+    <Value language="en_US">Quick Civ BE</Value>
+  </Description>
+  <Gameplay>
+    <GameData>Quick_Civ_BE.xml</GameData>
+    <Directory>XML</Directory>
+  </Gameplay>
+  <!-- <UISkin name="Expansion2Primary" set="Expansion2" platform="Common">
+    <GameplaySkin>
+      <Directory>Lua</Directory>
+    </GameplaySkin>
+  </UISkin> -->
+</CivBEPackage>
