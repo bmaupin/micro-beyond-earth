@@ -108,39 +108,38 @@
         <Update>
             <Where Type="WORLDSIZE_DUEL" />
             <Set>
-                <GridWidth>16</GridWidth>
-                <GridHeight>10</GridHeight>
+                <GridWidth>12</GridWidth>
+                <GridHeight>8</GridHeight>
             </Set>
         </Update>
         <!-- "Dwarf" -->
         <Update>
             <Where Type="WORLDSIZE_TINY" />
             <Set>
-                <!-- TODO: override DefaultPlayers? -->
-                <GridWidth>22</GridWidth>
-                <GridHeight>14</GridHeight>
+                <GridWidth>16</GridWidth>
+                <GridHeight>10</GridHeight>
             </Set>
         </Update>
         <Update>
             <Where Type="WORLDSIZE_SMALL" />
             <Set>
-                <GridWidth>26</GridWidth>
-                <GridHeight>16</GridHeight>
+                <GridWidth>20</GridWidth>
+                <GridHeight>12</GridHeight>
             </Set>
         </Update>
         <Update>
             <Where Type="WORLDSIZE_STANDARD" />
             <Set>
-                <GridWidth>32</GridWidth>
-                <GridHeight>20</GridHeight>
+                <GridWidth>24</GridWidth>
+                <GridHeight>16</GridHeight>
             </Set>
         </Update>
         <!-- "Massive" -->
         <Update>
             <Where Type="WORLDSIZE_LARGE" />
             <Set>
-                <GridWidth>42</GridWidth>
-                <GridHeight>26</GridHeight>
+                <GridWidth>32</GridWidth>
+                <GridHeight>20</GridHeight>
             </Set>
         </Update>
     </Worlds>

@@ -6,7 +6,8 @@
 - [ ] Package as DLC
   - [ ] Add Lua to DLC config and test
 - [ ] Play with modded map sizes
-- [ ] Enable hidden game options
+- [x] Test with Rising Tide
+- [x] Enable hidden game options
 - [ ] Disable buildings and wonders related to hidden game options
 - [ ] Update for Rising Tide DLC
 
