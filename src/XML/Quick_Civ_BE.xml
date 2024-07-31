@@ -26,12 +26,6 @@
             </Set>
         </Update>
         <Update>
-            <Where Type="GAMEOPTION_NO_CULTURE_OVERVIEW_UI" />
-            <Set>
-                <Visible>1</Visible>
-            </Set>
-        </Update>
-        <Update>
             <Where Type="GAMEOPTION_NO_HEALTH" />
             <Set>
                 <Visible>1</Visible>
