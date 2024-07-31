@@ -95,6 +95,18 @@
         <Row Tag="TXT_KEY_GAME_OPTION_NO_COVERT_OPERATIONS_HELP">
             <Text>All covert operations except for Establish Network are automatically aborted, making it so that Covert Ops is only useful for seeing a city and getting basic information about it.</Text>
         </Row>
+        <Update>
+            <Where Tag="TXT_KEY_GAME_OPTION_NO_POLICIES" />
+            <Set>
+                <Text>Disable Virtues</Text>
+            </Set>
+        </Update>
+        <Update>
+            <Where Tag="TXT_KEY_GAME_OPTION_NO_POLICIES_HELP" />
+            <Set>
+                <Text>Disables virtue system. No virtues granted in the game.</Text>
+            </Set>
+        </Update>
     </Language_en_US>
     <Victories>
         <Update>

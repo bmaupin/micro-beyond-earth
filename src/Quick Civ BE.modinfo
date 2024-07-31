@@ -23,7 +23,7 @@
   <Blocks />
   <Files>
     <File md5="96e31ccc3c74912ab6b9053f8257b42e" import="0">Lua/Quick_Civ_BE.lua</File>
-    <File md5="06bd9946a566cfb4116b8c3cc9e34286" import="1">XML/Quick_Civ_BE.xml</File>
+    <File md5="094e0da5156699404580b1f2ddb03b3c" import="1">XML/Quick_Civ_BE.xml</File>
   </Files>
   <Actions>
     <OnModActivated>
