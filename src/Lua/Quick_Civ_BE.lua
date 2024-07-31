@@ -17,8 +17,11 @@ GameEvents.PlayerDoTurn.Add(AbortCovertOperations);
 
 function CanCityConstructBuilding(playerID, cityID, buildingID)
     if (PreGame.GetGameOption("GAMEOPTION_NO_COVERT_OPERATIONS") == 1) then
+        -- -1 intrigue per turn in all cities
+        if buildingID == GameInfoTypes.BUILDING_RELATIVISTIC_DATA_BANK then
+            return false;
         -- Reduces cities max intrigue level by 2
-        if buildingID == GameInfoTypes.BUILDING_SURVEILLANCE_WEB then
+        elseif buildingID == GameInfoTypes.BUILDING_SURVEILLANCE_WEB then
             return false;
         end
     end
