@@ -26,6 +26,37 @@ function CanCityConstructBuilding(playerID, cityID, buildingID)
         end
     end
 
+    if (PreGame.GetGameOption("GAMEOPTION_NO_HEALTH") == 1) then
+        -- -50% unhealth from population in city
+        if buildingID == GameInfoTypes.BUILDING_AKKOROKAMUI then
+            return false;
+        -- +3 health
+        elseif buildingID == GameInfoTypes.BUILDING_GENE_SMELTER then
+            return false;
+        -- +4 health, +1 health from silica
+        elseif buildingID == GameInfoTypes.BUILDING_OPTICAL_SURGERY then
+            return false;
+        -- +2 health
+        elseif buildingID == GameInfoTypes.BUILDING_PHARMALAB then
+            return false;
+        -- +20% health
+        elseif buildingID == GameInfoTypes.BUILDING_PROGENITOR_GARDEN then
+            return false;
+        -- No unhealth from buildings or worked tiles
+        elseif buildingID == GameInfoTypes.BUILDING_PROMETHEAN then
+            return false;
+        -- +50% global benefits from health
+        elseif buildingID == GameInfoTypes.BUILDING_RESURRECTION_DEVICE then
+            return false;
+        -- +4 health
+        elseif buildingID == GameInfoTypes.BUILDING_SOMA_DISTILLERY then
+            return false;
+        -- -50% negative health
+        elseif buildingID == GameInfoTypes.BUILDING_XENONOVA then
+            return false;
+        end
+    end
+
     return true;
 end
 GameEvents.CityCanConstruct.Add(CanCityConstructBuilding);
