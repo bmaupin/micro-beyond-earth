@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mod id="9412c9bf-a7b2-481e-b42e-431f06aac221" version="1">
   <Properties>
-    <Name>Quick Civ BE</Name>
+    <Name>Micro Beyond Earth</Name>
     <Stability>Alpha</Stability>
     <Teaser>Play Beyond Earth more quickly</Teaser>
     <Description></Description>
@@ -22,16 +22,16 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="87b17651a4348d680072d8fe0bb852b1" import="0">Lua/Quick_Civ_BE.lua</File>
-    <File md5="5f368b69a818cab3085002eace290dfc" import="1">XML/Quick_Civ_BE.xml</File>
+    <File md5="87b17651a4348d680072d8fe0bb852b1" import="0">Lua/Micro_Beyond_Earth.lua</File>
+    <File md5="3b0fa642489c5003e42d7a368fa88f48" import="1">XML/Micro_Beyond_Earth.xml</File>
   </Files>
   <Actions>
     <OnModActivated>
-      <UpdateDatabase>XML/Quick_Civ_BE.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Micro_Beyond_Earth.xml</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>
-    <EntryPoint type="InGameUIAddin" file="Lua/Quick_Civ_BE.lua">
+    <EntryPoint type="InGameUIAddin" file="Lua/Micro_Beyond_Earth.lua">
       <Name>Logic</Name>
       <Description>Logic</Description>
     </EntryPoint>

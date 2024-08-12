@@ -9,13 +9,13 @@
     <Tag>Version</Tag>
   </PTags>
   <Name>
-    <Value language="en_US">Quick Civ BE</Value>
+    <Value language="en_US">Micro Beyond Earth</Value>
   </Name>
   <Description>
-    <Value language="en_US">Quick Civ BE</Value>
+    <Value language="en_US">Micro Beyond Earth</Value>
   </Description>
   <Gameplay>
-    <GameData>Quick_Civ_BE.xml</GameData>
+    <GameData>Micro_Beyond_Earth.xml</GameData>
     <Directory>XML</Directory>
   </Gameplay>
   <!-- <UISkin name="Expansion2Primary" set="Expansion2" platform="Common">
