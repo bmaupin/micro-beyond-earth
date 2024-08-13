@@ -1,21 +1,12 @@
-## To do
+# Micro Beyond Earth
 
-- [x] Mod map sizes
-- [x] Add option to disable covert operations
-- [x] Give all cities a free Ultrasonic fence
-- [ ] Package as DLC
-  - [ ] Add Lua to DLC config and test
-- [x] Play with modded map sizes
-- [x] Test with Rising Tide
-- [x] Enable hidden game options
-- [x] Disable buildings and wonders related to hidden game options
-- [ ] Publish to Steam
+💡 [See my other Civ projects here](https://github.com/search?q=user%3Abmaupin+topic%3Acivilization&type=Repositories)
 
 ## About
 
 #### Features
 
-- Smaller maps: this alone has the biggest impact on the length of the game
+- Smaller maps: this alone has the biggest impact on the length of the game. In addition to games being shorter, the game as a whole runs faster as there is less to process (e.g. much less wait time between turns).
 - Add ability to disable time victory in game options
 - New game option added to disable covert operations. This automatically aborts all covert operations except for Establish Network, making it so that Covert Ops is only about gathering information.
 - New game option to give all cities a free Ultrasonic Fence. This effectively prevents showing the button that there are aliens that a city can attack, in order to speed up gameplay.
@@ -30,6 +21,30 @@ The mod is usable but still undergoing testing. As of this writing, map sizes ha
 
 The Civilization series is one of my favourite game series, but I don't have the time to play a 10-15 hour game. I tried The Battle of Polytopia (a 4X game designed to be played in less than an hour) but I found it too shallow to be interesting. So instead, I decided to see if I could mod Civilization to make games much shorter, ideally 1-2 hours. This is the result of that experiment.
 
+## Usage
+
+1. Start Beyond Earth and go to the _Mods_ menu
+1. Check _Micro Beyond Earth_ and any other desired mods
+1. Before starting a game, click _Advanced Setup_ to see the new game options mentioned above
+
+#### Additional ways to speed up game play
+
+In the _Advanced Setup_ screen before starting a game, these options can help make the game go faster:
+
+- _Game Pace_ > _Quick_
+- Check _Disable Tutorial Popups_
+- Check _Quick Combat_
+- Check _Quick Movement_
+
+These are some options that can be changed in-game to make it go faster (go to the menu > _Options_)
+
+- _Advisor Level_ > _No Advice_
+- Check _Disable Planetfall Visual Effect_
+- Check _Hide Advisor Intro_
+- Check _Single Player Auto End Turn_
+
+  ⓘ You may wish to disable this at certain times during the game, in particular while at war
+
 ## Known issues
 
 #### Incompatible with Promised Land victory
@@ -42,7 +57,7 @@ Again, because the map sizes are so drastically reduced, games will be very diff
 
 - Artifacts
 - Marvels
-- Outposts
+- Stations
 
 If you wish to improve your chances of these systems being in the game, try playing on a larger map with fewer civs.
 
