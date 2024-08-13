@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$(dirname "$(which "$0")")/package.sh"
+source "$(dirname "$(which "$0")")/package-mod.sh"
 
 # Detect whether we're using native or Proton
 if [[ -f "/home/$USER/.steam/steam/steamapps/common/Sid Meier's Civilization Beyond Earth/CivBE" ]]; then
