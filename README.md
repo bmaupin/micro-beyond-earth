@@ -75,10 +75,11 @@ If you wish to improve your chances of these systems being in the game, try play
 
 This mod doesn't make changes to individual maps, only the global map sizes. Maps that override the global map sizes are unaffected by this mod. This includes:
 
-- Ice Age
-- Inland Sea
-- Skirmish
-- Tilted Axis
+- 82 Eridani e (part of the Exoplanets Map Pack DLC)
+- Glacial (needs to be manually unlocked, used to require linking 2K account)
+- Inland Sea (needs to be manually unlocked, used to require owning Sid Meier's Starships)
+- Mu Arae f (part of the Exoplanets Map Pack DLC)
+- Skirmish (only available in the base game, not in Rising Tide)
 
 #### Game crashes with `EXCEPTION_ACCESS_VIOLATION`
 
