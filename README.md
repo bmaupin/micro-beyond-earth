@@ -4,7 +4,7 @@
 
 ## About
 
-Play Beyond Earth much more quickly, primarily by shrinking the maps to a very small size.
+This is a mod to Sid Meier's Civilization: Beyond Earth to allow much shorter games, primarily by shrinking the maps to an extremely small size and also by adding additional game options.
 
 #### Features
 
@@ -12,7 +12,6 @@ Play Beyond Earth much more quickly, primarily by shrinking the maps to a very s
 - Very small maps! Map sizes have been reduced to 9% of their original size (30% of their height and 30% of their width). This alone has the biggest impact on the length of the game. In addition to games being shorter, the game as a whole runs faster as there is less to process (e.g. much less wait time between turns).
 - Add ability to disable time victory in game options
 - New game option added to disable covert operations. This automatically aborts all covert operations except for Establish Network, making it so that Covert Ops is only about gathering information.
-- New game option to give all cities a free Ultrasonic Fence. In the base game this effectively prevents showing the button that there are aliens that a city can attack, in order to speed up gameplay. Unfortunately it doesn't work as well with Rising Tide.
 - Shows hidden game options: this allows disabling of some game features (health, virtues, etc.) that could make the game quicker
 - Disables buildings and wonders related to hidden game options. For example, if health is disabled then buildings and wonders that only give health (e.g. Pharmalab, Soma Distillery) will not show in the list of available buildings to build.
 
@@ -24,7 +23,7 @@ The Civilization series is one of my favourite game series, but I don't have the
 
 ⚠️ If you're playing on Linux, install the patch here to fix the crash when using mods: [https://github.com/bmaupin/civ-be-linux-fixes/](https://github.com/bmaupin/civ-be-linux-fixes/)
 
-Download the mod from Steam here: [https://steamcommunity.com/sharedfiles/filedetails/?id=3309221969](https://steamcommunity.com/sharedfiles/filedetails/?id=3309221969)
+Install the mod from Steam here: [https://steamcommunity.com/sharedfiles/filedetails/?id=3309221969](https://steamcommunity.com/sharedfiles/filedetails/?id=3309221969)
 
 ## Usage
 
@@ -48,7 +47,13 @@ These are some options that can be changed in-game to make it go faster (go to t
 - Check _Hide Advisor Intro_
 - Check _Single Player Auto End Turn_
 
-  ⓘ You may wish to disable this at certain times during the game, in particular while at war
+  ⓘ See _AutoTurnControl_ below for a better alternative to setting Auto End Turn here
+
+## Recommended companion mods
+
+- [AutoTurnControl](https://steamcommunity.com/sharedfiles/filedetails/?id=503856497)
+  - This adds a toggle at the top of the screen for toggling Auto End Turn on or off
+  - It also has additional options that allow toggling Auto End Turn on or off automatically if a unit has died, covert agent has completed an operation, or city can attack. The last one is especially useful for skipping the notification that the city can attack an alien if you don't wish to do so.
 
 ## Known issues
 

@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="9412c9bf-a7b2-481e-b42e-431f06aac221" version="1">
+<Mod id="9412c9bf-a7b2-481e-b42e-431f06aac221" version="2">
   <Properties>
     <Name>Micro Beyond Earth</Name>
     <Stability>Alpha</Stability>
     <Teaser>Play Beyond Earth with tiny maps</Teaser>
-    <Description></Description>
+    <Description>Play Beyond Earth with extremely small maps and additional game options for much shorter games.</Description>
     <Authors>bmaupin</Authors>
     <HideSetupGame>0</HideSetupGame>
     <AffectsSavedGames>1</AffectsSavedGames>
@@ -22,8 +22,8 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="87b17651a4348d680072d8fe0bb852b1" import="0">Lua/Micro_Beyond_Earth.lua</File>
-    <File md5="3b0fa642489c5003e42d7a368fa88f48" import="1">XML/Micro_Beyond_Earth.xml</File>
+    <File md5="ddef1b4f30c4abd3eaca94fa8de8bcad" import="0">Lua/Micro_Beyond_Earth.lua</File>
+    <File md5="ad9c28e5264efc18c77ce8e1542cbccd" import="1">XML/Micro_Beyond_Earth.xml</File>
   </Files>
   <Actions>
     <OnModActivated>

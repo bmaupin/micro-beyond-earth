@@ -63,11 +63,6 @@
             </Set>
         </Update>
         <Row>
-            <Type>GAMEOPTION_FREE_ULTRASONIC_FENCE</Type>
-            <Description>TXT_KEY_GAME_OPTION_FREE_ULTRASONIC_FENCE</Description>
-            <Help>TXT_KEY_GAME_OPTION_FREE_ULTRASONIC_FENCE_HELP</Help>
-        </Row>
-        <Row>
             <Type>GAMEOPTION_NO_COVERT_OPERATIONS</Type>
             <Description>TXT_KEY_GAME_OPTION_NO_COVERT_OPERATIONS</Description>
             <Help>TXT_KEY_GAME_OPTION_NO_COVERT_OPERATIONS_HELP</Help>
@@ -76,12 +71,6 @@
     <Language_en_US>
         <Row Tag="TXT_KEY_9412C9BFA7B2481EB42E431F06AAC221_DESCRIPTION">
             <Text>Micro Beyond Earth</Text>
-        </Row>
-        <Row Tag="TXT_KEY_GAME_OPTION_FREE_ULTRASONIC_FENCE">
-            <Text>Free Ultrasonic Fence</Text>
-        </Row>
-        <Row Tag="TXT_KEY_GAME_OPTION_FREE_ULTRASONIC_FENCE_HELP">
-            <Text>Give all cities a free Ultrasonic Fence in order to not show the button that there are aliens that a city can attack.</Text>
         </Row>
         <Row Tag="TXT_KEY_GAME_OPTION_NO_COVERT_OPERATIONS">
             <Text>Disable Covert Operations</Text>
