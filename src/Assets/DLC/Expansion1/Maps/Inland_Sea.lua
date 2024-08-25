@@ -34,11 +34,11 @@ end
 function GetMapInitData(worldSize)
 	-- This function can reset map grid sizes or world wrap settings.
 	local worldsizes = {
-		[GameInfo.Worlds.WORLDSIZE_DUEL.ID] = {28, 18},
-		[GameInfo.Worlds.WORLDSIZE_TINY.ID] = {36, 22},
-		[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = {46, 28},
-		[GameInfo.Worlds.WORLDSIZE_STANDARD.ID] = {60, 36},
-		[GameInfo.Worlds.WORLDSIZE_LARGE.ID] = {72, 44},
+		[GameInfo.Worlds.WORLDSIZE_DUEL.ID] = {12, 8},
+		[GameInfo.Worlds.WORLDSIZE_TINY.ID] = {16, 10},
+		[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = {20, 12},
+		[GameInfo.Worlds.WORLDSIZE_STANDARD.ID] = {24, 16},
+		[GameInfo.Worlds.WORLDSIZE_LARGE.ID] = {32, 20},
 		--[GameInfo.Worlds.WORLDSIZE_HUGE.ID] = {84, 52}
 		}
 	local grid_size = worldsizes[worldSize];

@@ -46,11 +46,11 @@ function GetMapInitData(worldSize)
 	-- Vulcan is a world without oceans, so use grid sizes two levels below normal.
 	-- Expanding the grid sizes slightly vs Civ5 Lakes map, to make room for Canyons and Wild Areas.
 	local worldsizes = {
-		[GameInfo.Worlds.WORLDSIZE_DUEL.ID] = {28, 20},
-		[GameInfo.Worlds.WORLDSIZE_TINY.ID] = {36, 24},
-		[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = {44, 30},
-		[GameInfo.Worlds.WORLDSIZE_STANDARD.ID] = {54, 36},
-		[GameInfo.Worlds.WORLDSIZE_LARGE.ID] = {70, 44},
+		[GameInfo.Worlds.WORLDSIZE_DUEL.ID] = {12, 8},
+		[GameInfo.Worlds.WORLDSIZE_TINY.ID] = {16, 10},
+		[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = {20, 12},
+		[GameInfo.Worlds.WORLDSIZE_STANDARD.ID] = {24, 16},
+		[GameInfo.Worlds.WORLDSIZE_LARGE.ID] = {32, 20},
 		--[GameInfo.Worlds.WORLDSIZE_HUGE.ID] = {90, 56}
 		}
 	local grid_size = worldsizes[worldSize];
