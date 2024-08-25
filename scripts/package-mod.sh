@@ -28,6 +28,15 @@ temp_dir=$(mktemp -d -p $(pwd))
 cp -ar src/. "${temp_dir}"
 pushd "${temp_dir}" > /dev/null
 mv "${mod_name}.modinfo" "${mod_name_version}.modinfo"
-7z a -r ../"${mod_name_version}.civbemod" *
+# Lower-case filenames in the .modinfo file so the entry will match after we lower-case
+# the filename in the file system. This is required for Linux Steam workshop compatibility.
+sed -i '/<File/s|>\(.*\)<|\L&|' "${mod_name_version}.modinfo"
+sed -i '/<UpdateDatabase>/s|>\(.*\)<|\L&|' "${mod_name_version}.modinfo"
+sed -i '/<EntryPoint/s|file="\([^"]*\)"|file="\L\1"|' "${mod_name_version}.modinfo"
+# Lower-case all file names for cross-platform compatibility, particularly Linux (https://stackoverflow.com/a/152741)
+find . -depth -exec rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \;
+# Write the .civbemod file with a lower-case filename as well. This isn't necessary but
+# is more consistent and will make the manual installation instructions less confusing.
+7z a -r ../"$(echo "${mod_name} (v ${mod_version})" | tr '[:upper:]' '[:lower:]').civbemod" *
 popd > /dev/null
 rm -rf "${temp_dir}"
