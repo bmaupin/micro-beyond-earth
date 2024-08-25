@@ -23,7 +23,7 @@ The Civilization series is one of my favourite game series, but I don't have the
 
 ⚠️ If you're playing on Linux, install the patch here to fix the crash when using mods: [https://github.com/bmaupin/civ-be-linux-fixes/](https://github.com/bmaupin/civ-be-linux-fixes/)
 
-Install the mod from Steam here: [https://steamcommunity.com/sharedfiles/filedetails/?id=3309221969](https://steamcommunity.com/sharedfiles/filedetails/?id=3309221969)
+Install the mod from Steam here or see below for manual installation instructions: [https://steamcommunity.com/sharedfiles/filedetails/?id=3309221969](https://steamcommunity.com/sharedfiles/filedetails/?id=3309221969)
 
 ## Usage
 
@@ -86,3 +86,30 @@ This mod doesn't make changes to individual maps, only the global map sizes. Map
 This error can happen for a number of reasons, not always related to this mod.
 
 If an odd number is used for one of the values of the map size, it will cause the game to crash with this error just before the map is shown. The fix is to only use even numbers. This should be resolved but this note serves as a reminder in case the map sizes are adjusted in the future and this issue happens again.
+
+## Manual installation
+
+#### Linux
+
+Download the repository source file from [Releases](https://github.com/bmaupin/micro-beyond-earth/releases), extract it, and then run the install script:
+
+```
+./scripts/install-mod.sh
+```
+
+Or:
+
+1. Go to [Releases](https://github.com/bmaupin/micro-beyond-earth/releases) and download the `.civbemod` file
+1. Get the version of the mod from [src/Micro Beyond Earth.modinfo](src/Micro%20Beyond%20Earth.modinfo)
+   - It's add the end of the `Mod` element, e.g. `version="1"`
+1. Create a new directory named `Micro Beyond Earth (v 1)`
+   - 👉 Update the value after `(v ` with the version from the previous step
+1. Extract the contents of the `.civbemod` file to the directory you created (it's compressed using 7zip)
+1. Move the directory to the mods directory
+   - Native: ~/.local/share/aspyr-media/Sid Meier's Civilization Beyond Earth/MODS/
+   - Proton: ~/.steam/steam/steamapps/compatdata/65980/pfx/drive_c/users/steamuser/Documents/My Games/Sid Meier's Civilization Beyond Earth/MODS
+
+#### Windows
+
+1. Go to [Releases](https://github.com/bmaupin/micro-beyond-earth/releases) and download the `.civbemod` file
+1. Copy it to Documents/My Games/Sid Meier's Civilization Beyond Earth/MODS
