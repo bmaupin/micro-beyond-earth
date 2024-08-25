@@ -31,9 +31,6 @@
     <!-- Ice Age -->
     <File md5="1d413af252fd07922071b3a136079910" import="1">Assets/DLC/Expansion1/Maps/Ice_Age.lua</File>
     <File md5="8f1eb87fdabeb92c64519fa71c700ebf" import="1">Assets/DLC/Expansion1/Maps/Inland_Sea.lua</File>
-    <!-- TODO: This doesn't show up in Rising Tide -->
-    <!-- TODO: TEST -->
-    <File md5="8cfd1ec6965b5424bc644505e3020893" import="1">Assets/DLC/Expansion1/Maps/Skirmish.lua</File>
     <File md5="af2a6891a31767fe5ff159a8b6c14a14" import="1">Assets/Maps/Ice_Age.lua</File>
     <File md5="b6a9b472950a368abc2fc68b0a5cf27b" import="1">Assets/Maps/Inland_Sea.lua</File>
     <File md5="3bd1d358cc1f8353c6e213e232f29c1d" import="1">Assets/Maps/Skirmish.lua</File>
