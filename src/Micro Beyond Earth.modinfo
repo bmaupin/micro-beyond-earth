@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Mod id="9412c9bf-a7b2-481e-b42e-431f06aac221" version="2">
   <Properties>
     <Name>Micro Beyond Earth</Name>
@@ -27,10 +27,7 @@
     <File md5="ae47929e41bea3f64a45b7e7a7037d72" import="1">Assets/DLC/DLC_SP_Maps/Maps/TiltedAxis.lua</File>
     <!-- 82 Eridani e -->
     <File md5="a689e6c945c0cef31bb19b361aaf8be4" import="1">Assets/DLC/DLC_SP_Maps/Maps/Vulcan.lua</File>
-    <!-- TODO: game crashes on duel and massive -->
-    <!-- Ice Age -->
-    <File md5="1d413af252fd07922071b3a136079910" import="1">Assets/DLC/Expansion1/Maps/Ice_Age.lua</File>
-    <File md5="8f1eb87fdabeb92c64519fa71c700ebf" import="1">Assets/DLC/Expansion1/Maps/Inland_Sea.lua</File>
+    <!-- Glacial -->
     <File md5="af2a6891a31767fe5ff159a8b6c14a14" import="1">Assets/Maps/Ice_Age.lua</File>
     <File md5="b6a9b472950a368abc2fc68b0a5cf27b" import="1">Assets/Maps/Inland_Sea.lua</File>
     <File md5="3bd1d358cc1f8353c6e213e232f29c1d" import="1">Assets/Maps/Skirmish.lua</File>
