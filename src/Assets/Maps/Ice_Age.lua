@@ -13,6 +13,7 @@ include("TerrainGenerator");
 include("RiverGenerator");
 include("FeatureGenerator");
 include("MapmakerUtilities");
+include("IslandMaker");
 
 -------------------------------------------------------------------------------
 --[[
@@ -216,6 +217,9 @@ function GeneratePlotTypes()
 	end
 	
 	SetPlotTypes(plotTypes);
+	if (land_type <= 2) then
+		CreateSmallIslands(100)
+	end
 	GenerateCoasts()
 end
 -------------------------------------------------------------------------------
@@ -298,6 +302,20 @@ function Ice_AgeTerrainGenerator.Create(args)
 		
 		fracXExp		= fracXExp,
 		fracYExp		= fracYExp,
+		
+		coreThreshold = coreThreshold,
+		peripheryThreshold = peripheryThreshold,
+
+		-- Trench methods
+		GenerateTrenches = TerrainGenerator.GenerateTrenches,
+		DoTrench = TerrainGenerator.DoTrench,
+		GetTrenchValueAtPlot = TerrainGenerator.GetTrenchValueAtPlot,
+		GetValidNextTrenchPlot = TerrainGenerator.GetValidNextTrenchPlot,
+
+		-- Trench variables
+		TurnRightDirections =	{},
+		TurnLeftDirections =	{},
+		GetOppositeDirection =	{},
 		
 	}
 
@@ -486,9 +504,9 @@ function StartPlotSystem()
 	local start_plot_database = AssignStartingPlots.Create()
 	
 	print("Dividing the map in to Regions.");
-	-- Regional Division Method depends on landmass type selected.
+	-- Regional Division Method is all start.
 	local args = {
-		method = division_method,
+		method = 5,
 		resources = res,
 		};
 	start_plot_database:GenerateRegions(args)
