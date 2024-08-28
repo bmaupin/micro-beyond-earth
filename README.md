@@ -39,6 +39,8 @@ In the _Advanced Setup_ screen before starting a game, these options can help ma
 - Check _Disable Tutorial Popups_
 - Check _Quick Combat_
 - Check _Quick Movement_
+- Check _Disable Health_
+  - Health as a mechanic was added to prevent "infinite city sprawl," which really isn't an issue with this mod, so it makes more sense to disable it altogether
 
 These are some options that can be changed in-game to make it go faster (go to the menu > _Options_)
 
@@ -52,8 +54,8 @@ These are some options that can be changed in-game to make it go faster (go to t
 ## Recommended companion mods
 
 - [AutoTurnControl](https://steamcommunity.com/sharedfiles/filedetails/?id=503856497)
-  - This adds a toggle at the top of the screen for toggling Auto End Turn on or off
-  - It also has additional options that allow toggling Auto End Turn on or off automatically if a unit has died, covert agent has completed an operation, or city can attack. The last one is especially useful for skipping the notification that the city can attack an alien if you don't wish to do so.
+  - Adds a toggle at the top of the screen for toggling Auto End Turn on or off
+  - Has additional options that allow toggling Auto End Turn on or off in certain situations
 
 ## Known issues
 
