@@ -41,8 +41,7 @@ $ egrep -A 1 TXT_KEY_MAP_.+_NAME steamassets/assets/gameplay/xml/text/en_us/civb
 #### Get base game map names
 
 ```
-$ egrep -v "_HELP|_TITLE|_FORMAT|_OPTION|_SCRIPT|_SIZE|_TYPE|_FOLDER" steamassets/assets/gameplay/xml/text/en
-_us/civbegametextinfos_frontendscreens.xml  | grep -A 1 "TXT_KEY_MAP"
+$ egrep -v "_HELP|_TITLE|_FORMAT|_OPTION|_SCRIPT|_SIZE|_TYPE|_FOLDER" steamassets/assets/gameplay/xml/text/en_us/civbegametextinfos_frontendscreens.xml  | grep -A 1 "TXT_KEY_MAP"
     <Row Tag="TXT_KEY_MAP_TERRAN">
       <Text>Terran</Text>
 --
