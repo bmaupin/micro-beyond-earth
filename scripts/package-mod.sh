@@ -13,8 +13,7 @@ for filename in $(find . -type f | cut -c 3-); do
     new_md5sum=$(md5sum "$filename" | awk '{print $1}')
     old_md5sum=$(grep "$filename" "${mod_name}.modinfo" | head -n 1 | awk '{print $2}' | cut -c 6- | rev | cut -c 2- | rev)
     if [[ -n $old_md5sum ]]; then
-        # -r allows references like \1 to be used without escaping parenthesis
-        sed -i -r "s@${old_md5sum}(.*${filename})@${new_md5sum}\1@" "${mod_name}.modinfo"
+        sed -i "s@${old_md5sum}\(.*${filename}\)@${new_md5sum}\1@" "${mod_name}.modinfo"
     fi
 done
 IFS="$original_IFS"
