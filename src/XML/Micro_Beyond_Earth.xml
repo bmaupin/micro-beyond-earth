@@ -67,16 +67,37 @@
             <Description>TXT_KEY_GAME_OPTION_NO_COVERT_OPERATIONS</Description>
             <Help>TXT_KEY_GAME_OPTION_NO_COVERT_OPERATIONS_HELP</Help>
         </Row>
+        <Row>
+            <Type>GAMEOPTION_EXPLORERS_START_AUTO</Type>
+            <Description>TXT_KEY_GAME_OPTION_EXPLORERS_START_AUTO</Description>
+            <Help>TXT_KEY_GAME_OPTION_EXPLORERS_START_AUTO</Help>
+            <Default>false</Default>
+        </Row>
+        <Row>
+            <Type>GAMEOPTION_WORKERS_START_AUTO</Type>
+            <Description>TXT_KEY_GAME_OPTION_WORKERS_START_AUTO</Description>
+            <Help>TXT_KEY_GAME_OPTION_WORKERS_START_AUTO</Help>
+            <Default>false</Default>
+        </Row>
     </GameOptions>
     <Language_en_US>
-        <Row Tag="TXT_KEY_9412C9BFA7B2481EB42E431F06AAC221_DESCRIPTION">
-            <Text>Micro Beyond Earth</Text>
-        </Row>
         <Row Tag="TXT_KEY_GAME_OPTION_NO_COVERT_OPERATIONS">
             <Text>Disable Covert Operations</Text>
         </Row>
         <Row Tag="TXT_KEY_GAME_OPTION_NO_COVERT_OPERATIONS_HELP">
             <Text>All covert operations except for Establish Network are automatically aborted, making it so that Covert Ops is only useful for seeing a city and getting basic information about it.</Text>
+        </Row>
+        <Row Tag="TXT_KEY_GAME_OPTION_EXPLORERS_START_AUTO">
+            <Text>Explorers Start Automated</Text>
+        </Row>
+        <Row Tag="TXT_KEY_GAME_OPTION_EXPLORERS_START_AUTO_HELP">
+            <Text>Explorers will automatically start exploring as soon as they're created. This can be cancelled by clicking their Stop Automation action.</Text>
+        </Row>
+        <Row Tag="TXT_KEY_GAME_OPTION_WORKERS_START_AUTO">
+            <Text>Workers Start Automated</Text>
+        </Row>
+        <Row Tag="TXT_KEY_GAME_OPTION_WORKERS_START_AUTO_HELP">
+            <Text>Workers will automatically start building improvements as soon as they're created. This can be cancelled by clicking their Stop Automation action.</Text>
         </Row>
         <Update>
             <Where Tag="TXT_KEY_GAME_OPTION_NO_POLICIES" />

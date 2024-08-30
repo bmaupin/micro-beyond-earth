@@ -60,3 +60,22 @@ function CanCityConstructBuilding(playerID, cityID, buildingID)
     return true;
 end
 GameEvents.CityCanConstruct.Add(CanCityConstructBuilding);
+
+function OnUnitCreated(playerID, unitID)
+    local player = Players[playerID];
+    local unit = player:GetUnitByID(unitID);
+
+    if (PreGame.GetGameOption("GAMEOPTION_EXPLORERS_START_AUTO") == 1) then
+        if unit ~= nil and unit:GetUnitType() == GameInfo.Units["UNIT_EXPLORER"].ID then
+            -- The last parameter has to be set to 1 for some reason; 0 didn't work
+            unit:DoCommand(CommandTypes.COMMAND_AUTOMATE, 1);
+        end
+    end
+
+    if (PreGame.GetGameOption("GAMEOPTION_WORKERS_START_AUTO") == 1) then
+        if unit ~= nil and unit:GetUnitType() == GameInfo.Units["UNIT_WORKER"].ID then
+            unit:DoCommand(CommandTypes.COMMAND_AUTOMATE, 0);
+        end
+    end
+end
+LuaEvents.SerialEventUnitCreatedGood.Add(OnUnitCreated);

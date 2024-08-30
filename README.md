@@ -14,6 +14,7 @@ This is a mod to Sid Meier's Civilization: Beyond Earth to allow much shorter ga
 - New game option added to disable covert operations. This automatically aborts all covert operations except for Establish Network, making it so that Covert Ops is only about gathering information.
 - Shows hidden game options: this allows disabling of some game features (health, virtues, etc.) that could make the game quicker
 - Disables buildings and wonders related to hidden game options. For example, if health is disabled then buildings and wonders that only give health (e.g. Pharmalab, Soma Distillery) will not show in the list of available buildings to build.
+- New game options to start explorers and workers automated
 
 #### Motivation
 
@@ -36,11 +37,15 @@ Install the mod from Steam here or see below for manual installation instruction
 In the _Advanced Setup_ screen before starting a game, these options can help make the game go faster:
 
 - _Game Pace_ > _Quick_
-- Check _Disable Tutorial Popups_
-- Check _Quick Combat_
-- Check _Quick Movement_
-- Check _Disable Health_
+- _Disable Health_
   - Health as a mechanic was added to prevent "infinite city sprawl," which really isn't an issue with this mod, so it makes more sense to disable it altogether
+- _Disable Tutorial Popups_
+- _Explorers Start Automated_
+  - Saves a click if you typically automate explorers. Can always be cancelled by clicking on the unit > _Stop Automation_.
+- _Quick Combat_
+- _Quick Movement_
+- _Workers Start Automated_
+  - Saves a click if you typically automate workers. Can always be cancelled by clicking on the unit > _Stop Automation_.
 
 These are some options that can be changed in-game to make it go faster (go to the menu > _Options_)
 
