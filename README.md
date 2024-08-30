@@ -24,7 +24,10 @@ The Civilization series is one of my favourite game series, but I don't have the
 
 ⚠️ If you're playing on Linux, install the patch here to fix the crash when using mods: [https://github.com/bmaupin/civ-be-linux-fixes/](https://github.com/bmaupin/civ-be-linux-fixes/)
 
-Install the mod from Steam here or see below for manual installation instructions: [https://steamcommunity.com/sharedfiles/filedetails/?id=3309221969](https://steamcommunity.com/sharedfiles/filedetails/?id=3309221969)
+Install the mod from Steam here or see below for manual installation instructions:<br>
+<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3309221969">
+<img src="steam-store-badge.webp" alt="Available on Steam" width="200px">
+</a>
 
 ## Usage
 
