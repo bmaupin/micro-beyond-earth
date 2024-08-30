@@ -11,7 +11,7 @@ This is a mod to Sid Meier's Civilization: Beyond Earth to allow much shorter ga
 - Compatible with Beyond Earth base game and Rising Tide
 - Very small maps! Map sizes have been reduced to 9% of their original size (30% of their height and 30% of their width). This alone has the biggest impact on the length of the game. In addition to games being shorter, the game as a whole runs faster as there is less to process (e.g. much less wait time between turns).
 - Add ability to disable time victory in game options
-- New game option added to disable covert operations. This automatically aborts all covert operations except for Establish Network, making it so that Covert Ops is only about gathering information.
+- New game option added to disable covert operations
 - Shows hidden game options: this allows disabling of some game features (health, virtues, etc.) that could make the game quicker
 - Disables buildings and wonders related to hidden game options. For example, if health is disabled then buildings and wonders that only give health (e.g. Pharmalab, Soma Distillery) will not show in the list of available buildings to build.
 - New game options to start explorers and workers automated
@@ -33,31 +33,30 @@ Install the mod from Steam here or see below for manual installation instruction
 
 1. Start Beyond Earth and go to the _Mods_ menu
 1. Check _Micro Beyond Earth_ and any other desired mods
-1. Before starting a game, click _Advanced Setup_ to see the new game options mentioned above
+1. Before starting a game, click _Advanced Setup_ to configure additional game options
 
-#### Additional ways to speed up game play
+   These options can help make the game go faster:
 
-In the _Advanced Setup_ screen before starting a game, these options can help make the game go faster:
+   - _Game Pace_ > _Quick_
+   - _Disable Covert Operations_
+     - This automatically aborts all covert operations except for Establish Network, so you can ignore covert ops altogether or use it only to gather information
+   - _Disable Health_
+     - Health as a mechanic was added to prevent "infinite city sprawl," which really isn't an issue with this mod, so it makes more sense to disable it altogether
+   - _Disable Tutorial Popups_
+   - _Explorers Start Automated_
+     - Saves a click if you typically automate explorers. Can always be cancelled by clicking on the unit > _Stop Automation_.
+   - _Quick Combat_
+   - _Quick Movement_
+   - _Workers Start Automated_
+     - Saves a click if you typically automate workers. Can always be cancelled by clicking on the unit > _Stop Automation_.
 
-- _Game Pace_ > _Quick_
-- _Disable Health_
-  - Health as a mechanic was added to prevent "infinite city sprawl," which really isn't an issue with this mod, so it makes more sense to disable it altogether
-- _Disable Tutorial Popups_
-- _Explorers Start Automated_
-  - Saves a click if you typically automate explorers. Can always be cancelled by clicking on the unit > _Stop Automation_.
-- _Quick Combat_
-- _Quick Movement_
-- _Workers Start Automated_
-  - Saves a click if you typically automate workers. Can always be cancelled by clicking on the unit > _Stop Automation_.
+1. After you start the game, go to the menu > _Options_ to see more options that can make the game go faster
 
-These are some options that can be changed in-game to make it go faster (go to the menu > _Options_)
-
-- _Advisor Level_ > _No Advice_
-- Check _Disable Planetfall Visual Effect_
-- Check _Hide Advisor Intro_
-- Check _Single Player Auto End Turn_
-
-  ⓘ See _AutoTurnControl_ below for a better alternative to setting Auto End Turn here
+   - _Advisor Level_ > _No Advice_
+   - _Disable Planetfall Visual Effect_
+   - _Hide Advisor Intro_
+   - _Single Player Auto End Turn_
+     - See _AutoTurnControl_ below for a better alternative to setting Auto End Turn here
 
 ## Recommended companion mods
 
