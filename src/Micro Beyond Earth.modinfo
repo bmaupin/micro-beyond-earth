@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="9412c9bf-a7b2-481e-b42e-431f06aac221" version="4">
+<Mod id="9412c9bf-a7b2-481e-b42e-431f06aac221" version="5">
   <Properties>
     <Name>Micro Beyond Earth</Name>
     <Stability>Alpha</Stability>
@@ -31,25 +31,18 @@
     <File md5="1d413af252fd07922071b3a136079910" import="1">Assets/Maps/Ice_Age.lua</File>
     <File md5="8f1eb87fdabeb92c64519fa71c700ebf" import="1">Assets/Maps/Inland_Sea.lua</File>
     <File md5="3bd1d358cc1f8353c6e213e232f29c1d" import="1">Assets/Maps/Skirmish.lua</File>
-    <File md5="83df228815c96a28b8261f53856f735b" import="0">Lua/Micro_Beyond_Earth.lua</File>
-    <File md5="2bf649c76a1685527b9ec6bc56a3eb1d" import="0">Unit Created Event (v 5)/Promotion_Created.xml</File>
-    <File md5="e3ab73844886b35f4b78a604fa2d13d2" import="0">Unit Created Event (v 5)/SerialEventUnitCreatedGood.lua</File>
+    <File md5="6a8f720b32415816c4a591ef16885bbd" import="0">Lua/Micro_Beyond_Earth.lua</File>
     <File md5="9631e0151fe8067587ce875c67092cd2" import="1">XML/Micro_Beyond_Earth.xml</File>
   </Files>
   <Actions>
     <OnModActivated>
       <UpdateDatabase>XML/Micro_Beyond_Earth.xml</UpdateDatabase>
-      <UpdateDatabase>Unit Created Event (v 5)/Promotion_Created.xml</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>
     <EntryPoint type="InGameUIAddin" file="Lua/Micro_Beyond_Earth.lua">
       <Name>Logic</Name>
       <Description>Logic</Description>
-    </EntryPoint>
-    <EntryPoint type="InGameUIAddin" file="Unit Created Event (v 5)/SerialEventUnitCreatedGood.lua">
-      <Name>SerialEventUnitCreatedGood.lua</Name>
-      <Description>SerialEventUnitCreatedGood.lua</Description>
     </EntryPoint>
   </EntryPoints>
 </Mod>

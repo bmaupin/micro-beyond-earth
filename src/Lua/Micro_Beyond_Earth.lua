@@ -61,21 +61,41 @@ function CanCityConstructBuilding(playerID, cityID, buildingID)
 end
 GameEvents.CityCanConstruct.Add(CanCityConstructBuilding);
 
+-- Unfortunately Events.SerialEventUnitCreated is called more than just when a unit is
+-- created: "SerialEventUnitCreated works for this. It triggers for all players, whever a
+-- unit is created. Unfortunately, it ALSO triggers whenever a unit embarks, disembarks,
+-- rebases, etc." (https://forums.civfanatics.com/threads/any-way-to-get-the-unit-create-event-to-work-as-expected.434826/#post-10764768)
+-- A workaround is to use this Unit Event Created mod: https://forums.civfanatics.com/resources/unit-created-event-mod-maker-snippet.23175/
+-- However, that seems to trigger a bug in Beyond Earth where unit panel UI has bugs
+-- (https://forums.civfanatics.com/threads/unit-promotion-unitpanel-mod-bug.540867/). In
+-- this case, units simply weren't showing in the UI at all. So in the end, we opt to
+-- track which units we've automated ourselves with this variable.
+local automatedUnits = {};
+
 function OnUnitCreated(playerID, unitID)
     local player = Players[playerID];
     local unit = player:GetUnitByID(unitID);
 
     if (PreGame.GetGameOption("GAMEOPTION_EXPLORERS_START_AUTO") == 1) then
         if unit ~= nil and unit:GetUnitType() == GameInfo.Units["UNIT_EXPLORER"].ID then
-            -- The last parameter has to be set to 1 for some reason; 0 didn't work
-            unit:DoCommand(CommandTypes.COMMAND_AUTOMATE, 1);
+            -- Check if the unit has already been automated
+            if not automatedUnits[unitID] then
+                -- The last parameter has to be set to 1 for some reason; 0 didn't work
+                unit:DoCommand(CommandTypes.COMMAND_AUTOMATE, 1);
+
+                -- Mark the unit as automated by adding its ID to the table
+                automatedUnits[unitID] = true;
+            end
         end
     end
 
     if (PreGame.GetGameOption("GAMEOPTION_WORKERS_START_AUTO") == 1) then
         if unit ~= nil and unit:GetUnitType() == GameInfo.Units["UNIT_WORKER"].ID then
-            unit:DoCommand(CommandTypes.COMMAND_AUTOMATE, 0);
+            if not automatedUnits[unitID] then
+                unit:DoCommand(CommandTypes.COMMAND_AUTOMATE, 0);
+                automatedUnits[unitID] = true;
+            end
         end
     end
 end
-LuaEvents.SerialEventUnitCreatedGood.Add(OnUnitCreated);
+Events.SerialEventUnitCreated.Add(OnUnitCreated);

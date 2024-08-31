@@ -112,7 +112,3 @@ Or:
 
 1. Go to [Releases](https://github.com/bmaupin/micro-beyond-earth/releases) and download the `.civbemod` file
 1. Copy it to Documents/My Games/Sid Meier's Civilization Beyond Earth/MODS
-
-## Credits
-
-- [Unit Created Event](https://forums.civfanatics.com/resources/unit-created-event-mod-maker-snippet.23175/) from Machiavelli24
