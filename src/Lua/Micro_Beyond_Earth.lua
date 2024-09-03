@@ -107,33 +107,32 @@ function ResetHealth(playerID)
         return;
     end
 
-    local excessHealth = player:GetExcessHealth();
+    local totalHealth = player:GetExcessHealth();
     local numCities = player:GetNumCities();
-    local baselineHealth = excessHealth - (player:GetExtraHealthPerCity() * numCities);
 
     print("(ResetHealth) playerID=", playerID)
     print("(ResetHealth) player:GetExcessHealth()=", player:GetExcessHealth())
     print("(ResetHealth) player:GetExtraHealthPerCity()=", player:GetExtraHealthPerCity())
     print("(ResetHealth) player:GetNumCities()=", player:GetNumCities())
-    print("(ResetHealth) baselineHealth=", baselineHealth)
 
-    if excessHealth < 0 then
-        local adjustment = math.ceil(math.abs(baselineHealth) / numCities);
+    if totalHealth < 0 then
+        local adjustment = math.ceil(math.abs(totalHealth) / numCities);
+        -- This does not set extra health per city but increases or decreases it by this amount
         player:ChangeExtraHealthPerCity(adjustment);
-        local newExcessHealth = excessHealth + (adjustment * numCities);
+        local newExcessHealth = totalHealth + (adjustment * numCities);
 
-        print("(Micro Beyond Earth) Adjusting health for player " .. playerID .. ", was: " .. excessHealth .. ", now: " .. newExcessHealth);
+        print("(Micro Beyond Earth) Adjusting health for player " .. playerID .. ", was: " .. totalHealth .. ", now: " .. newExcessHealth);
 
         print("(ResetHealth) adjustment=", adjustment);
         print("(ResetHealth) player:GetExcessHealth()=", player:GetExcessHealth())
         print("(ResetHealth) player:GetExtraHealthPerCity()=", player:GetExtraHealthPerCity())
 
-    elseif excessHealth > 5 then
-        local adjustment = math.floor(baselineHealth / numCities) * -1;
+    elseif totalHealth > 5 then
+        local adjustment = math.floor(totalHealth / numCities) * -1;
         player:ChangeExtraHealthPerCity(adjustment);
-        local newExcessHealth = excessHealth + (adjustment * numCities);
+        local newExcessHealth = totalHealth + (adjustment * numCities);
 
-        print("(Micro Beyond Earth) Adjusting health for player " .. playerID .. ", was: " .. excessHealth .. ", now: " .. newExcessHealth);
+        print("(Micro Beyond Earth) Adjusting health for player " .. playerID .. ", was: " .. totalHealth .. ", now: " .. newExcessHealth);
 
         print("(ResetHealth) adjustment=", adjustment);
         print("(ResetHealth) player:GetExcessHealth()=", player:GetExcessHealth())
