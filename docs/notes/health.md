@@ -14,6 +14,8 @@ Every turn, set health and unhealth to 0. I think it might need to be done per p
 
 ## Interesting code
 
+#### Health
+
 ```
 $ strings ../Sid\ Meier\'s\ Civilization\ Beyond\ Earth/libCvGameCoreDLL_Expansion1.so | grep ^CvLua | grep Health | egrep -v Get | sort
 CvLuaArgs::pushValue<HealthLevelTypes>
@@ -36,7 +38,34 @@ pPlayer:SetHealth()
 pPlayer:SetHealthPerGarrisonedUnit()
 pPlayer:SetHealthPerTradeRoute()
 
-#### Testing
+#### Policies
+
+```
+$ strings ../Sid\ Meier\'s\ Civilization\ Beyond\ Earth/libCvGameCoreDLL_Expansion1.so | grep ^CvLua | egrep -v "CvLuaArgs|CvLuaMethodWrapper" | grep Polic | egrep -v Get | sort
+CvLuaCity::lChangeCulturePerTurnFromPolicies
+CvLuaGame::lHasMadeAgreementWithPolicy
+CvLuaGame::lIsKickerPolicy
+CvLuaGame::lIsPlayerReceivingPolicyFromAgreement
+CvLuaPlayer::lAddForeignPolicy
+CvLuaPlayer::lCanAdoptAnyPolicy
+CvLuaPlayer::lCanAdoptPolicy
+CvLuaPlayer::lCanUnlockPolicyBranch
+CvLuaPlayer::lChangeNumFreePolicies
+CvLuaPlayer::lChangeScoreFromFuturePolicies
+CvLuaPlayer::lDoAdoptPolicy
+CvLuaPlayer::lHasPolicy
+CvLuaPlayer::lIsPolicyBlocked
+CvLuaPlayer::lIsPolicyBranchBlocked
+CvLuaPlayer::lIsPolicyBranchFinished
+CvLuaPlayer::lIsPolicyBranchUnlocked
+CvLuaPlayer::lRemoveForeignPolicy
+CvLuaPlayer::lSetHasPolicy
+CvLuaPlayer::lSetNumFreePolicies
+CvLuaPlayer::lSetPolicyBranchUnlocked
+CvLuaQuestObjective::lSetExtraPolicyAIWeight
+```
+
+## Testing
 
 - pPlayer:ChangeExtraHealthPerCity()
   - Persists between turns?: yes, changes pPlayer:GetExtraHealthPerCity()

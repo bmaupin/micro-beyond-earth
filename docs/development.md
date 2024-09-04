@@ -29,6 +29,10 @@ To reload changes to the mod without exiting Beyond Earth:
 
 ## Troubleshooting
 
+#### Game crashes after Lua error in previous game
+
+This seems like normal behaviour. If a Lua error occurs in a game, the game may continue to work fine. But the next game that's played or loaded may crash.
+
 #### Runtime Error: bad argument #2 to 'lCanAdoptPolicy' (integer expected, got no value)
 
 Errors like these can be caused when calling object functions with `.` (which is supposed to be only used for static functions) instead of `:`, e.g.
