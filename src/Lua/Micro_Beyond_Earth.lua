@@ -99,3 +99,108 @@ function OnUnitCreated(playerID, unitID)
     end
 end
 Events.SerialEventUnitCreated.Add(OnUnitCreated);
+
+-- If the Disable Health game option is checked, unfortunately this doesn't actually
+-- disable bonuses or maluses from health, so extra logic is added here to effectively set
+-- each player's health to 0 (give or take).
+function ResetHealth(playerID)
+    if (PreGame.GetGameOption("GAMEOPTION_NO_HEALTH") ~= 1) then
+        return;
+    end
+
+    local player = Players[playerID];
+
+    if (not player:IsMajorCiv() or not player:IsAlive() or player:GetNumCities() == 0) then
+        return;
+    end
+
+    local totalHealth = player:GetExcessHealth();
+    local numCities = player:GetNumCities();
+
+    -- A health of 0 - 5 in game has no bonuses or maluses. This range allows for up to 6
+    -- cities. Beyond that, we need to adjust the maximum health to avoid constantly
+    -- triggering the health adjustment logic.
+    local maxTotalHealth = 5;
+    if numCities > 6 then
+        maxTotalHealth = numCities - 1;
+    end
+
+    if totalHealth < 0 then
+        local adjustment = math.ceil(math.abs(totalHealth) / numCities);
+        -- This does not set extra health per city but increases or decreases it by this amount
+        -- NOTE: As best as I can tell, impact on overall health takes effect at the end of the turn when total (excess) health is recalculated
+        player:ChangeExtraHealthPerCity(adjustment);
+        local newExcessHealth = totalHealth + (adjustment * numCities);
+
+        print("(Micro Beyond Earth) Adjusting health for player " .. playerID .. ", was: " .. totalHealth .. ", now: " .. newExcessHealth);
+
+    elseif totalHealth > maxTotalHealth then
+        local adjustment = math.floor(totalHealth / numCities) * -1;
+        player:ChangeExtraHealthPerCity(adjustment);
+        local newExcessHealth = totalHealth + (adjustment * numCities);
+
+        print("(Micro Beyond Earth) Adjusting health for player " .. playerID .. ", was: " .. totalHealth .. ", now: " .. newExcessHealth);
+    end
+end
+GameEvents.PlayerDoTurn.Add(ResetHealth);
+
+-- If the Disable Health game option is checked, give all health-related policies to all
+-- players to avoid them wasting a free policy on something that will have little to no
+-- impact as well as to speed up gameplay
+function GiveFreeHealthPolicies()
+    if (PreGame.GetGameOption("GAMEOPTION_NO_HEALTH") ~= 1) then
+        return;
+    end
+
+    for playerID = 0, GameDefines.MAX_CIV_PLAYERS - 1 do
+        local player = Players[playerID];
+
+        if player:IsMajorCiv() and player:IsAlive() then
+            -- Profiteering
+            if not player:HasPolicy(GameInfo.Policies["POLICY_INDUSTRY_8"].ID) then
+                player:SetHasPolicy(GameInfo.Policies["POLICY_INDUSTRY_8"].ID, true);
+            end
+
+            -- Magnasanti
+            if not player:HasPolicy(GameInfo.Policies["POLICY_INDUSTRY_15"].ID) then
+                player:SetHasPolicy(GameInfo.Policies["POLICY_INDUSTRY_15"].ID, true);
+            end
+
+            -- Foresight
+            if not player:HasPolicy(GameInfo.Policies["POLICY_KNOWLEDGE_1"].ID) then
+                player:SetHasPolicy(GameInfo.Policies["POLICY_KNOWLEDGE_1"].ID, true);
+            end
+
+            -- Creative Class
+            if not player:HasPolicy(GameInfo.Policies["POLICY_KNOWLEDGE_5"].ID) then
+                player:SetHasPolicy(GameInfo.Policies["POLICY_KNOWLEDGE_5"].ID, true);
+            end
+
+            -- Community Medicine
+            if not player:HasPolicy(GameInfo.Policies["POLICY_KNOWLEDGE_8"].ID) then
+                player:SetHasPolicy(GameInfo.Policies["POLICY_KNOWLEDGE_8"].ID, true);
+            end
+
+            -- Public Security
+            if not player:HasPolicy(GameInfo.Policies["POLICY_MIGHT_6"].ID) then
+                player:SetHasPolicy(GameInfo.Policies["POLICY_MIGHT_6"].ID, true);
+            end
+
+            -- Mind Over Matter
+            if not player:HasPolicy(GameInfo.Policies["POLICY_PROSPERITY_10"].ID) then
+                player:SetHasPolicy(GameInfo.Policies["POLICY_PROSPERITY_10"].ID, true);
+            end
+
+            -- Joy From Variety
+            if not player:HasPolicy(GameInfo.Policies["POLICY_PROSPERITY_12"].ID) then
+                player:SetHasPolicy(GameInfo.Policies["POLICY_PROSPERITY_12"].ID, true);
+            end
+
+            -- Eudaimonia
+            if not player:HasPolicy(GameInfo.Policies["POLICY_PROSPERITY_15"].ID) then
+                player:SetHasPolicy(GameInfo.Policies["POLICY_PROSPERITY_15"].ID, true);
+            end
+        end
+    end
+end
+Events.SequenceGameInitComplete.Add(GiveFreeHealthPolicies);
