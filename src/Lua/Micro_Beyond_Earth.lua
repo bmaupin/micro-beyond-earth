@@ -110,6 +110,14 @@ function ResetHealth(playerID)
     local totalHealth = player:GetExcessHealth();
     local numCities = player:GetNumCities();
 
+    -- A health of 0 - 5 in game has no bonuses or maluses. This range allows for up to 6
+    -- cities. Beyond that, we need to adjust the maximum health to avoid constantly
+    -- triggering the health adjustment logic.
+    local maxTotalHealth = 5;
+    if numCities > 6 then
+        maxTotalHealth = numCities - 1;
+    end
+
     print("(ResetHealth) playerID=", playerID)
     print("(ResetHealth) player:GetExcessHealth()=", player:GetExcessHealth())
     print("(ResetHealth) player:GetExtraHealthPerCity()=", player:GetExtraHealthPerCity())
@@ -118,6 +126,7 @@ function ResetHealth(playerID)
     if totalHealth < 0 then
         local adjustment = math.ceil(math.abs(totalHealth) / numCities);
         -- This does not set extra health per city but increases or decreases it by this amount
+        -- NOTE: As best as I can tell, impact on overall health takes effect at the end of the turn when total (excess) health is recalculated
         player:ChangeExtraHealthPerCity(adjustment);
         local newExcessHealth = totalHealth + (adjustment * numCities);
 
@@ -127,7 +136,7 @@ function ResetHealth(playerID)
         print("(ResetHealth) player:GetExcessHealth()=", player:GetExcessHealth())
         print("(ResetHealth) player:GetExtraHealthPerCity()=", player:GetExtraHealthPerCity())
 
-    elseif totalHealth > 5 then
+    elseif totalHealth > maxTotalHealth then
         local adjustment = math.floor(totalHealth / numCities) * -1;
         player:ChangeExtraHealthPerCity(adjustment);
         local newExcessHealth = totalHealth + (adjustment * numCities);
