@@ -10,11 +10,12 @@ This is a mod to Sid Meier's Civilization: Beyond Earth to allow much shorter ga
 
 - Compatible with Beyond Earth base game and Rising Tide
 - Very small maps! Map sizes have been reduced to 9% of their original size (30% of their height and 30% of their width). This alone has the biggest impact on the length of the game. In addition to games being shorter, the game as a whole runs faster as there is less to process (e.g. much less wait time between turns).
-- Add ability to disable time victory in game options
+- Adds ability to disable time victory in game options
 - New game option added to disable covert operations
 - Shows hidden game options: this allows disabling of some game features (health, virtues, etc.) that could make the game quicker
 - Disables buildings and wonders related to hidden game options. For example, if health is disabled then buildings and wonders that only give health (e.g. Pharmalab, Soma Distillery) will not show in the list of available buildings to build.
 - New game options to start explorers and workers automated
+- Removes health bonuses and maluses and gives all health-related virtues if health is disabled
 
 #### Motivation
 

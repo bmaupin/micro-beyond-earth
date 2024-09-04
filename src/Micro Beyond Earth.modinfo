@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="9412c9bf-a7b2-481e-b42e-431f06aac221" version="5">
+<Mod id="9412c9bf-a7b2-481e-b42e-431f06aac221" version="6">
   <Properties>
     <Name>Micro Beyond Earth</Name>
     <Stability>Alpha</Stability>
@@ -31,7 +31,7 @@
     <File md5="1d413af252fd07922071b3a136079910" import="1">Assets/Maps/Ice_Age.lua</File>
     <File md5="8f1eb87fdabeb92c64519fa71c700ebf" import="1">Assets/Maps/Inland_Sea.lua</File>
     <File md5="3bd1d358cc1f8353c6e213e232f29c1d" import="1">Assets/Maps/Skirmish.lua</File>
-    <File md5="b6087f2cab8d6e7da73629788a00f246" import="0">Lua/Micro_Beyond_Earth.lua</File>
+    <File md5="e685427c3003fca30feb89292383a261" import="0">Lua/Micro_Beyond_Earth.lua</File>
     <File md5="9631e0151fe8067587ce875c67092cd2" import="1">XML/Micro_Beyond_Earth.xml</File>
   </Files>
   <Actions>
