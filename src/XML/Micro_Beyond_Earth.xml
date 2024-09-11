@@ -124,7 +124,7 @@
         <Update>
             <Where Type="WORLDSIZE_DUEL" />
             <Set>
-                <GridWidth>12</GridWidth>
+                <GridWidth>16</GridWidth>
                 <GridHeight>8</GridHeight>
             </Set>
         </Update>
