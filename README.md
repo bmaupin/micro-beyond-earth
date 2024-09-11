@@ -2,6 +2,15 @@
 
 💡 [See my other Civ projects here](https://github.com/search?q=user%3Abmaupin+topic%3Acivilization&type=Repositories)
 
+## Installation
+
+⚠️ If you're playing on Linux, install the patch here to fix the crash when using mods: [https://github.com/bmaupin/civ-be-linux-fixes/](https://github.com/bmaupin/civ-be-linux-fixes/)
+
+Install the mod from Steam here or see below for manual installation instructions:<br>
+<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3309221969">
+<img src="steam-store-badge.webp" alt="Available on Steam" width="200px">
+</a>
+
 ## About
 
 This is a mod to Sid Meier's Civilization: Beyond Earth to allow much shorter games, primarily by shrinking the maps to an extremely small size and also by adding additional game options.
@@ -20,15 +29,6 @@ This is a mod to Sid Meier's Civilization: Beyond Earth to allow much shorter ga
 #### Motivation
 
 The Civilization series is one of my favourite game series, but I don't have the time to play a 10-15 hour game. I tried The Battle of Polytopia (a 4X game designed to be played in less than an hour) but I found it too shallow to be interesting. So instead, I decided to see if I could mod Beyond Earth to make games much shorter, ideally 1-2 hours. This is the result of that experiment.
-
-## Installation
-
-⚠️ If you're playing on Linux, install the patch here to fix the crash when using mods: [https://github.com/bmaupin/civ-be-linux-fixes/](https://github.com/bmaupin/civ-be-linux-fixes/)
-
-Install the mod from Steam here or see below for manual installation instructions:<br>
-<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3309221969">
-<img src="steam-store-badge.webp" alt="Available on Steam" width="200px">
-</a>
 
 ## Usage
 
