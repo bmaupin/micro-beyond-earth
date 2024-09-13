@@ -1,0 +1,14 @@
+{
+  // Prevent the Lua extension form scanning the entire workspace
+  "Lua.workspace.maxPreload": 0,
+  "Lua.diagnostics.globals": [
+    "GameEvents",
+    "GameInfo",
+    "GameInfoTypes",
+    "Players",
+    "PreGame",
+    "CommandTypes",
+    "Events",
+    "GameDefines"
+  ]
+}
