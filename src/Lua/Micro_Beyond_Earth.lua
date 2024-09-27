@@ -263,7 +263,7 @@ function DebugUpgrades(playerID)
 
                     -- Track the number of purchasable upgrades at the pending upgrade tier
                     local numPurchasableUpgrades = 0;
-                    local purchasableUpgradeType = 0;
+                    local availableUpgradeId = 0;
                     -- Figure out which upgrades the unit is eligible for
                     for _,iType in ipairs(upgradeTypes) do
                         print("(DebugUpgrades) iType=", iType)
@@ -279,7 +279,7 @@ function DebugUpgrades(playerID)
 
                         if isPurchasable then
                             numPurchasableUpgrades = numPurchasableUpgrades + 1;
-                            purchasableUpgradeType = iType;
+                            availableUpgradeId = iType;
                         end
                     end
 
@@ -288,16 +288,16 @@ function DebugUpgrades(playerID)
                     -- Only auto upgrade if there's exactly one available upgrade tier
                     if numPurchasableUpgrades == 1 then
                         -- Get the available perks for the upgrade and pick a random one
-                        local perkTypes	= player:GetPerksForUpgrade(purchasableUpgradeType);
+                        local perkTypes	= player:GetPerksForUpgrade(availableUpgradeId);
                         local randomIndex = math.random(#perkTypes);
-                        local randomPerkType = perkTypes[randomIndex];
+                        local randomPerkId = perkTypes[randomIndex];
 
                         print("(DebugUpgrades) randomIndex=", randomIndex)
-                        print("(DebugUpgrades) randomPerkType=", randomPerkType)
+                        print("(DebugUpgrades) randomPerkType=", randomPerkId)
 
 
-                        local hasUpgrade = player:DoesUnitHaveUpgrade(unitInfo.ID, purchasableUpgradeType);
-                        local hasPerk = player:DoesUnitHavePerk(unitInfo.ID, randomPerkType);
+                        local hasUpgrade = player:DoesUnitHaveUpgrade(unitInfo.ID, availableUpgradeId);
+                        local hasPerk = player:DoesUnitHavePerk(unitInfo.ID, randomPerkId);
                         print("(DebugUpgrades) hasUpgrade=", hasUpgrade)
                         print("(DebugUpgrades) hasPerk=", hasPerk)
 
@@ -313,9 +313,10 @@ function DebugUpgrades(playerID)
 
                         -- Apply the upgrade and random perk
                         if not hasUpgrade and not hasPerk then
-                            -- TODO: Get unit, upgrade, perk for better logging
-                            print("(Micro Beyond Earth) Auto upgrading unit", unitInfo.ID, "with upgrade", purchasableUpgradeType, "and perk", randomPerkType);
-                            player:AssignUnitUpgrade(unitInfo.ID, purchasableUpgradeType, randomPerkType);
+                            local upgrade = GameInfo.UnitUpgrades[availableUpgradeId];
+                            local perk = GameInfo.UnitPerks[randomPerkId];
+                            print("(Micro Beyond Earth) Auto upgrading unit", unitInfo.Type, "with upgrade", upgrade.Type, "and perk", perk.Type);
+                            player:AssignUnitUpgrade(unitInfo.ID, availableUpgradeId, randomPerkId);
                         end
                     end
                 end
