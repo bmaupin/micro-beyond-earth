@@ -124,6 +124,8 @@
         <Update>
             <Where Type="WORLDSIZE_DUEL" />
             <Set>
+                <!-- 16 seems to be the smallest width that doesn't cause crashes
+                     (https://github.com/bmaupin/micro-beyond-earth/issues/7) -->
                 <GridWidth>16</GridWidth>
                 <GridHeight>8</GridHeight>
             </Set>
