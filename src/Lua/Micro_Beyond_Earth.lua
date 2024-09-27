@@ -206,8 +206,10 @@ end
 Events.SequenceGameInitComplete.Add(GiveFreeHealthPolicies);
 
 -- NOTE: much of this code is from unitupgradepopup.lua
-function DebugUpgrades(playerID)
-    -- TODO: only apply logic if game option is enabled
+function AutoUpgradeUnits(playerID)
+    if (PreGame.GetGameOption("GAMEOPTION_AUTO_UPGRADE_UNITS") ~= 1) then
+        return;
+    end
 
     local player = Players[playerID];
 
@@ -221,15 +223,11 @@ function DebugUpgrades(playerID)
 	local supremacyAmt = player:GetAffinityLevel(GameInfo.Affinity_Types["AFFINITY_TYPE_SUPREMACY"].ID);
 	local anyAmt = (purityAmt + harmonyAmt + supremacyAmt);
 
-    print("(DebugUpgrades) player:HasAnyPendingUpgrades()=", player:HasAnyPendingUpgrades());
 	if (player:HasAnyPendingUpgrades()) then
 	    for unitInfo in GameInfo.Units() do
             local hasPendingUpgrade = player:DoesUnitHavePendingUpgrades(unitInfo.ID, -1, true);
 
             if hasPendingUpgrade then
-                print("(DebugUpgrades) unitInfo.Type=", unitInfo.Type)
-                print("(DebugUpgrades) hasPendingUpgrade=", hasPendingUpgrade)
-
                 -- Store which upgrade tier is next (the one pending for upgrade)
                 local nextLevel	= 0;
                 -- Total number of upgrade tiers for the unit
@@ -243,18 +241,10 @@ function DebugUpgrades(playerID)
                     end
 
                     -- Figure out which upgrade tier is next (the one pending for upgrade)
-                    print("(DebugUpgrades) iLevel=", iLevel)
-                    print("(DebugUpgrades) table.count(upgradeTypes)=", table.count(upgradeTypes))
-                    print("(DebugUpgrades) nextLevel=", nextLevel)
-                    print("(DebugUpgrades) numLevels=", numLevels)
-                    print("(DebugUpgrades) player:IsUnitUpgradeTierReady(unitInfo.ID, iLevel)=", player:IsUnitUpgradeTierReady(unitInfo.ID, iLevel))
                     if player:IsUnitUpgradeTierReady(unitInfo.ID, iLevel) then
                         nextLevel = iLevel;
                     end
                 end
-
-                print("(DebugUpgrades) nextLevel=", nextLevel)
-                print("(DebugUpgrades) numLevels=", numLevels)
 
                 -- Only auto upgrade if this is not the last upgrade tier for the unit
                 if nextLevel < numLevels then
@@ -266,7 +256,6 @@ function DebugUpgrades(playerID)
                     local availableUpgradeId = 0;
                     -- Figure out which upgrades the unit is eligible for
                     for _,iType in ipairs(upgradeTypes) do
-                        print("(DebugUpgrades) iType=", iType)
                         local upgrade = GameInfo.UnitUpgrades[iType];
 
                         local isPurchasable =
@@ -275,15 +264,11 @@ function DebugUpgrades(playerID)
                             upgrade.HarmonyLevel	<= harmonyAmt and
                             upgrade.SupremacyLevel	<= supremacyAmt;
 
-                        print("(DebugUpgrades) isPurchasable=", isPurchasable)
-
                         if isPurchasable then
                             numPurchasableUpgrades = numPurchasableUpgrades + 1;
                             availableUpgradeId = iType;
                         end
                     end
-
-                    print("(DebugUpgrades) numPurchasableUpgrades=", numPurchasableUpgrades)
 
                     -- Only auto upgrade if there's exactly one available upgrade tier
                     if numPurchasableUpgrades == 1 then
@@ -292,26 +277,9 @@ function DebugUpgrades(playerID)
                         local randomIndex = math.random(#perkTypes);
                         local randomPerkId = perkTypes[randomIndex];
 
-                        print("(DebugUpgrades) randomIndex=", randomIndex)
-                        print("(DebugUpgrades) randomPerkType=", randomPerkId)
-
-
+                        -- Apply the upgrade and random perk
                         local hasUpgrade = player:DoesUnitHaveUpgrade(unitInfo.ID, availableUpgradeId);
                         local hasPerk = player:DoesUnitHavePerk(unitInfo.ID, randomPerkId);
-                        print("(DebugUpgrades) hasUpgrade=", hasUpgrade)
-                        print("(DebugUpgrades) hasPerk=", hasPerk)
-
-                        -- local perkTypes			: table = m_player:GetPerksForUnit(unit.ID);
-
-                        -- local perkInfo : table = GameInfo.UnitPerks[perkType];
-
-                        -- for iLevel,upgradeInstances in ipairs(unit.Upgrades) do
-                        --     for i,upgradeData in pairs(upgradeInstances) do
-                        --         m_selectedUpgrade = upgradeData;
-                        --         for _,perk in ipairs(m_selectedUpgrade.Perks) do
-
-
-                        -- Apply the upgrade and random perk
                         if not hasUpgrade and not hasPerk then
                             local upgrade = GameInfo.UnitUpgrades[availableUpgradeId];
                             local perk = GameInfo.UnitPerks[randomPerkId];
@@ -324,4 +292,4 @@ function DebugUpgrades(playerID)
 	    end
 	end
 end
-GameEvents.PlayerDoTurn.Add(DebugUpgrades);
+GameEvents.PlayerDoTurn.Add(AutoUpgradeUnits);

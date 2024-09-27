@@ -22,6 +22,7 @@ The implementation depends on the different classes of units:
 Based on this, this could be implemented a number of ways:
 
 - Auto-upgrade all units up to last tier
+  - At the moment I'm thinking if this might be good enough: simpler to implement, consistent across the board, no need for gymnastics. Plus it's only 6 affinity specific units I was considering auto upgrading.
   - This would get us most of the way there, except for the affinity-specific units. Might be a good place to start
 - Auto-upgrade all units up to last tier
 - Auto-upgrade based on affinity level
@@ -36,7 +37,7 @@ Based on this, this could be implemented a number of ways:
    - `Player:HasAnyPendingUpgrades`
 1. Go through each unit to see if it has upgrades
    - `Player:DoesUnitHavePendingUpgrades`
-   - or `Unit:CanUpgradeRightNow`? All the other methods use `Player`, so I think that's probably better
+   - ~~or `Unit:CanUpgradeRightNow`?~~ All the other methods use `Player`, so I think that's probably better
 1. If a unit has upgrades, apply logic to see if we should auto-upgrade
    - TODO
 1. Auto-upgrade as needed
@@ -75,8 +76,7 @@ All:
 
 ```
 $ strings libCvGameCoreDLL_Expansion1.so | grep ^CvLua | grep "::" | grep Upgrade | sort -u | cut -c 6- | sed 's/::l/:/'
-City:AllUpgradesAvailable
-City:GetSpecialistUpgradeThreshold
+...
 Game:GetImprovementUpgradeTime
 Game:GetUnitUpgradesTo
 Player:AssignUnitUpgrade
@@ -98,10 +98,7 @@ Player:IsUnitUpgradeIgnored
 Player:IsUnitUpgradeTierReady
 Player:IsUpgradeUnlocked
 Player:RemoveUnitUpgrade
-Plot:ChangeUpgradeProgress
-Plot:GetUpgradeProgress
-Plot:GetUpgradeTimeLeft
-Plot:SetUpgradeProgress
+...
 Unit:CanUpgradeRightNow
 Unit:GetNumResourceNeededToUpgrade
 Unit:GetUpgradeDiscount
@@ -125,19 +122,7 @@ All:
 $ strings libCvGameCoreDLL_Expansion1.so | grep ^CvLua | grep "::" | grep Perk | sort -u | cut -c 6- | sed 's/::l/:/'
 City:GetHealthFromPerks
 City:IsPerkActive
-Game:GetPlayerPerkBuildingClassAquaticCityMoveCostMod
-Game:GetPlayerPerkBuildingClassCityHPChange
-Game:GetPlayerPerkBuildingClassCityStrengthChange
-Game:GetPlayerPerkBuildingClassCityStrikeMod
-Game:GetPlayerPerkBuildingClassEnergyMaintenanceChange
-Game:GetPlayerPerkBuildingClassFlatHealthChange
-Game:GetPlayerPerkBuildingClassFlatYieldChange
-Game:GetPlayerPerkBuildingClassGrowthCarryoverChange
-Game:GetPlayerPerkBuildingClassMilitaryProductionMod
-Game:GetPlayerPerkBuildingClassNavalProductionMod
-Game:GetPlayerPerkBuildingClassOrbitalCoverageChange
-Game:GetPlayerPerkBuildingClassPercentHealthChange
-Game:GetPlayerPerkBuildingClassPercentYieldChange
+...
 Player:AddPerk
 Player:DoesUnitHavePerk
 Player:GetAllActivePlayerPerks
@@ -183,4 +168,23 @@ Player:GetDominantAffinityType
 Player:GetNumFreeAffinityLevels
 Player:GetUnitAffinityRequirementDiscount
 Player:GetYieldPerTurnFromAffinityLevel
+```
+
+#### Unit class
+
+```
+$ strings libCvGameCoreDLL_Expansion1.so | grep ^CvLua | grep "::" | grep UnitClass | egrep -v "Args::|MethodWrapper|Team::" | sort -u | cut -c 6- | sed 's/::l/:/'
+Game:GetUnitClassCreatedCount
+Game:IsUnitClassMaxedOut
+Player:GetUnitClassCount
+Player:GetUnitClassCountPlusMaking
+Player:GetUnitClassMaking
+Player:GetUpgradesForUnitClassLevel
+Player:IsProductionMaxedUnitClass
+Player:IsUnitClassFreeToBuild
+Player:IsUnitClassMaxedOut
+Unit:GetUnitClassModifier
+Unit:GetUnitClassType
+Unit:UnitClassAttackModifier
+Unit:UnitClassDefenseModifier
 ```
