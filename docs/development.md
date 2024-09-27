@@ -1,10 +1,36 @@
 # Development
 
+## Development
+
+#### Set up Lua extension for Visual Studio Code
+
+ⓘ This is recommended as any syntax errors in Lua code can cause Beyond Earth to crash
+
+1. Go to _Extensions_, search for Lua, and install the _Lua_ extension by _sumneko_
+1. Go to _File_ > _Preferences_ > _Settings_
+1. Search for `lua` and configure the Lua extension as desired; here's my current user configuration (folder configuration is in [../.vscode/settings.json](../.vscode/settings.json)):
+   ```jsonc
+   // Make it so that the Lua extension only diagnoses the currently open file instead of the entire workspace
+   "Lua.workspace.maxPreload": 0,
+   ```
+1. To ignore other directories in a multi-directory workspace, e.g.
+   ```
+   mkdir -p ~/.steam/steam/steamapps/common/Sid\ Meier\'s\ Civilization\ Beyond\ Earth/.vscode/
+   echo '{
+     "Lua.diagnostics.enable": false
+   }' > ~/.steam/steam/steamapps/common/Sid\ Meier\'s\ Civilization\ Beyond\ Earth/.vscode/settings.json
+   ```
+
+ⓘ The Lua Language Server does not support type definitions (I guess this is a feature of HavokScript?). The easiest fix is to remove them from any Lua files you're developing.
+
+If you see _Undefined global_ errors, you can right-click > _Quick Fix_ > _Mark ... as defined global_. You may need to close and re-open the file for it to take effect.
+
 #### Reload mod changes
 
 To reload changes to the mod without exiting Beyond Earth:
 
 1. Make any changes to the mod as needed
+
 1. Delete the mod directory and copy it over again with the new mod content
 
    ⓘ It's that the mod directory get deleted, otherwise changes won't get picked up. If the mod doesn't show up in the Mods menu, run the command again and it should work. As best as I can tell, the command can be run at any time before the mod is loaded, even in the Mods menu itself.

@@ -204,3 +204,92 @@ function GiveFreeHealthPolicies()
     end
 end
 Events.SequenceGameInitComplete.Add(GiveFreeHealthPolicies);
+
+-- NOTE: much of this code is from unitupgradepopup.lua
+function AutoUpgradeUnits(playerID)
+    if (PreGame.GetGameOption("GAMEOPTION_AUTO_UPGRADE_UNITS") ~= 1) then
+        return;
+    end
+
+    local player = Players[playerID];
+
+    if not player:IsHuman() or not player:IsAlive() then
+        return;
+    end
+
+    local MAX_UPGRADE_LEVELS = 3;
+	local purityAmt = player:GetAffinityLevel(GameInfo.Affinity_Types["AFFINITY_TYPE_PURITY"].ID);
+	local harmonyAmt = player:GetAffinityLevel(GameInfo.Affinity_Types["AFFINITY_TYPE_HARMONY"].ID);
+	local supremacyAmt = player:GetAffinityLevel(GameInfo.Affinity_Types["AFFINITY_TYPE_SUPREMACY"].ID);
+	local anyAmt = (purityAmt + harmonyAmt + supremacyAmt);
+
+	if (player:HasAnyPendingUpgrades()) then
+	    for unitInfo in GameInfo.Units() do
+            local hasPendingUpgrade = player:DoesUnitHavePendingUpgrades(unitInfo.ID, -1, true);
+
+            if hasPendingUpgrade then
+                -- Store which upgrade tier is next (the one pending for upgrade)
+                local nextLevel	= 0;
+                -- Total number of upgrade tiers for the unit
+                local numLevels = 0;
+                for iLevel = 1, MAX_UPGRADE_LEVELS do
+                    -- Figure out how many total upgrade levels the unit has
+                    local upgradeTypes = player:GetUpgradesForUnitClassLevel(unitInfo.ID, iLevel);
+                    ---@diagnostic disable-next-line: undefined-field
+                    if table.count(upgradeTypes) > 0 then
+                        numLevels = numLevels + 1;
+                    end
+
+                    -- Figure out which upgrade tier is next (the one pending for upgrade)
+                    if player:IsUnitUpgradeTierReady(unitInfo.ID, iLevel) then
+                        nextLevel = iLevel;
+                    end
+                end
+
+                -- Only auto upgrade if this is not the last upgrade tier for the unit
+                if nextLevel < numLevels then
+                    -- Get available upgrades for the pending upgrade tier
+                    local upgradeTypes = player:GetUpgradesForUnitClassLevel(unitInfo.ID, nextLevel);
+
+                    -- Track the number of purchasable upgrades at the pending upgrade tier
+                    local numPurchasableUpgrades = 0;
+                    local availableUpgradeId = 0;
+                    -- Figure out which upgrades the unit is eligible for
+                    for _,iType in ipairs(upgradeTypes) do
+                        local upgrade = GameInfo.UnitUpgrades[iType];
+
+                        local isPurchasable =
+                            upgrade.AnyAffinityLevel <= anyAmt and
+                            upgrade.PurityLevel		<= purityAmt and
+                            upgrade.HarmonyLevel	<= harmonyAmt and
+                            upgrade.SupremacyLevel	<= supremacyAmt;
+
+                        if isPurchasable then
+                            numPurchasableUpgrades = numPurchasableUpgrades + 1;
+                            availableUpgradeId = iType;
+                        end
+                    end
+
+                    -- Only auto upgrade if there's exactly one available upgrade tier
+                    if numPurchasableUpgrades == 1 then
+                        -- Get the available perks for the upgrade and pick a random one
+                        local perkTypes	= player:GetPerksForUpgrade(availableUpgradeId);
+                        local randomIndex = math.random(#perkTypes);
+                        local randomPerkId = perkTypes[randomIndex];
+
+                        -- Apply the upgrade and random perk
+                        local hasUpgrade = player:DoesUnitHaveUpgrade(unitInfo.ID, availableUpgradeId);
+                        local hasPerk = player:DoesUnitHavePerk(unitInfo.ID, randomPerkId);
+                        if not hasUpgrade and not hasPerk then
+                            local upgrade = GameInfo.UnitUpgrades[availableUpgradeId];
+                            local perk = GameInfo.UnitPerks[randomPerkId];
+                            print("(Micro Beyond Earth) Auto upgrading unit", unitInfo.Type, "with upgrade", upgrade.Type, "and perk", perk.Type);
+                            player:AssignUnitUpgrade(unitInfo.ID, availableUpgradeId, randomPerkId);
+                        end
+                    end
+                end
+            end
+	    end
+	end
+end
+GameEvents.PlayerDoTurn.Add(AutoUpgradeUnits);

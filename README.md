@@ -25,6 +25,7 @@ This is a mod to Sid Meier's Civilization: Beyond Earth to allow much shorter ga
 - Disables buildings and wonders related to hidden game options. For example, if health is disabled then buildings and wonders that only give health (e.g. Pharmalab, Soma Distillery) will not show in the list of available buildings to build.
 - New game options to start explorers and workers automated
 - Removes health bonuses and maluses and gives all health-related virtues if health is disabled
+- New game option to automate upgrading units
 
 #### Motivation
 
@@ -39,6 +40,8 @@ The Civilization series is one of my favourite game series, but I don't have the
    These options can help make the game go faster:
 
    - _Game Pace_ > _Quick_
+   - _Auto Upgrade Units_
+     - This will automatically upgrade units and choose a random perk up to but not including each unit's last upgrade tier; in most cases only the final upgrade tier is significant
    - _Disable Covert Operations_
      - This automatically aborts all covert operations except for Establish Network, so you can ignore covert ops altogether or use it only to gather information
    - _Disable Health_
@@ -113,3 +116,9 @@ Or:
 
 1. Go to [Releases](https://github.com/bmaupin/micro-beyond-earth/releases) and download the `.civbemod` file
 1. Copy it to Documents/My Games/Sid Meier's Civilization Beyond Earth/MODS
+
+## Wishlist
+
+- [ ] Mod supremacy victory condition to automatically send units through emancipation gate once they reach it
+- [ ] Mod purity victory condition to automatically summon settlers
+- [ ] Mod purity victory condition to allow settling settlers in existing cities

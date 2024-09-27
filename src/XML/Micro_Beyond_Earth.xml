@@ -63,6 +63,11 @@
             </Set>
         </Update>
         <Row>
+            <Type>GAMEOPTION_AUTO_UPGRADE_UNITS</Type>
+            <Description>TXT_KEY_GAME_OPTION_AUTO_UPGRADE_UNITS</Description>
+            <Help>TXT_KEY_GAME_OPTION_AUTO_UPGRADE_UNITS_HELP</Help>
+        </Row>
+        <Row>
             <Type>GAMEOPTION_NO_COVERT_OPERATIONS</Type>
             <Description>TXT_KEY_GAME_OPTION_NO_COVERT_OPERATIONS</Description>
             <Help>TXT_KEY_GAME_OPTION_NO_COVERT_OPERATIONS_HELP</Help>
@@ -81,6 +86,12 @@
         </Row>
     </GameOptions>
     <Language_en_US>
+        <Row Tag="TXT_KEY_GAME_OPTION_AUTO_UPGRADE_UNITS">
+            <Text>Auto Upgrade Units</Text>
+        </Row>
+        <Row Tag="TXT_KEY_GAME_OPTION_AUTO_UPGRADE_UNITS_HELP">
+            <Text>Automatically upgrade units and choose a random perk up to but not including each unit's last upgrade tier.</Text>
+        </Row>
         <Row Tag="TXT_KEY_GAME_OPTION_NO_COVERT_OPERATIONS">
             <Text>Disable Covert Operations</Text>
         </Row>
@@ -124,6 +135,8 @@
         <Update>
             <Where Type="WORLDSIZE_DUEL" />
             <Set>
+                <!-- 16 seems to be the smallest width that doesn't cause crashes
+                     (https://github.com/bmaupin/micro-beyond-earth/issues/7) -->
                 <GridWidth>16</GridWidth>
                 <GridHeight>8</GridHeight>
             </Set>
