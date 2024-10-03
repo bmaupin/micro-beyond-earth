@@ -168,6 +168,10 @@ function GiveFreeHealthPolicies()
 
             -- Foresight
             if not player:HasPolicy(GameInfo.Policies["POLICY_KNOWLEDGE_1"].ID) then
+                -- For some reason we have to unlock the policy branch first but only for the first policy in a branch
+                if not player:IsPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_KNOWLEDGE"].ID) then
+                    player:SetPolicyBranchUnlocked(GameInfo.PolicyBranchTypes["POLICY_BRANCH_KNOWLEDGE"].ID, true)
+                end
                 player:SetHasPolicy(GameInfo.Policies["POLICY_KNOWLEDGE_1"].ID, true);
             end
 
