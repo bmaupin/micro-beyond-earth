@@ -15,7 +15,9 @@ function AbortCovertOperations(playerID)
         if (agent:IsDoingOperation()) then
             local operation = agent:GetOperation();
             if (operation ~= nil) then
-                if (operation.Type ~= GameInfo.CovertOperations["COVERT_OPERATION_ESTABLISH_NETWORK"].ID) then
+                if (operation.Type ~= GameInfo.CovertOperations["COVERT_OPERATION_DELIVER_DOSSIER"].ID and
+                    operation.Type ~= GameInfo.CovertOperations["COVERT_OPERATION_ESTABLISH_NETWORK"].ID and
+                    operation.Type ~= GameInfo.CovertOperations["COVERT_OPERATION_EXTRACT_OPERATIVE"].ID) then
                     local operationInfo = GameInfo.CovertOperations[operation.Type]
                     print("(Micro Beyond Earth) Aborting covert operation " .. operationInfo.Type .. " for player " .. playerID);
                     agent:AbortOperation();
