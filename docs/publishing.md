@@ -52,7 +52,7 @@ https://partner.steamgames.com/doc/features/workshop/implementation
 e.g.
 
 ```
-./steamremotestorage-uploader -a 65980 -i 1234567890 -f /path/to/Micro\ Beyond\ Earth\ \(v\ 1\).civbemod -n "New release"
+./steamremotestorage-uploader -a 65980 -i 3309221969 -f /path/to/Micro\ Beyond\ Earth\ \(v\ 2\).civbemod -n "v2: Version summary"
 ```
 
 ## Troubleshooting
