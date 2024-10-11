@@ -26,6 +26,7 @@ This is a mod to Sid Meier's Civilization: Beyond Earth to allow much shorter ga
 - New game options to start explorers and workers automated
 - Removes health bonuses and maluses and gives all health-related virtues if health is disabled
 - New game option to automate upgrading units
+- Purity affinity victory (Promised Land) has been modded to automatically summon Earthling settlers and to accomodate smaller map sizes
 
 #### Motivation
 
@@ -70,13 +71,9 @@ The Civilization series is one of my favourite game series, but I don't have the
 
 ## Known issues
 
-#### Incompatible with Promised Land victory
+#### Missing game features
 
-Because this mod significantly reduces the map sizes, it is likely that the purity affinity victory (Promised Land) will not be possible with the mod because there may not be enough space on the map to settle the new colonists required for the victory.
-
-#### Other missing game features
-
-Again, because the map sizes are so drastically reduced, games will be very different. Depending on which map size is picked and how many other civs there are, some systems may not show up in the game at all, such as:
+Because the map sizes are so drastically reduced, games will be very different. Depending on which map size is picked and how many other civs there are, some systems may not show up in the game at all, such as:
 
 - Artifacts
 - Marvels

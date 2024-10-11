@@ -88,7 +88,9 @@
     <Improvements>
         <Update>
             <Where Type="IMPROVEMENT_EARTHLING_SETTLEMENT" />
-            <Set MinRangeToCity="0" />
+            <!-- TODO: This may need to be decreased but should not be increased any higher than 2 -->
+            <!-- NOTE: If this is changed, update TXT_KEY_MISSION_FOUND_EARTHLING_SETTLEMENT_DISABLED_HELP below accordingly -->
+            <Set MinRangeToCity="2" />
         </Update>
     </Improvements>
     <Language_en_US>
@@ -126,6 +128,12 @@
             <Where Tag="TXT_KEY_GAME_OPTION_NO_POLICIES_HELP" />
             <Set>
                 <Text>Disables virtue system. No virtues granted in the game.</Text>
+            </Set>
+        </Update>
+        <Update>
+            <Where Tag="TXT_KEY_MISSION_FOUND_EARTHLING_SETTLEMENT_DISABLED_HELP" />
+            <Set>
+                <Text>Earthling Settlement must be founded on land or Coast tiles. They cannot be founded within 2 Tiles of another City, Outpost, or Earthling Settlement, or along the edge of a map.</Text>
             </Set>
         </Update>
     </Language_en_US>
