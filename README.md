@@ -120,5 +120,7 @@ Or:
 ## Wishlist
 
 - [ ] Mod supremacy victory condition to automatically send units through emancipation gate once they reach it
-- [ ] Mod purity victory condition to automatically summon settlers
-- [ ] Mod purity victory condition to allow settling settlers in existing cities
+
+## Credits
+
+- [Victories - Automated Exodus Gate](https://www.picknmixmods.com/mods/CivBE/Victories/Automated%20Exodus%20Gate.html) from [whoward69](https://forums.civfanatics.com/members/whoward69.210828/)
