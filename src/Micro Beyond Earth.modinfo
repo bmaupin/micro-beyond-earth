@@ -32,7 +32,7 @@
     <File md5="8f1eb87fdabeb92c64519fa71c700ebf" import="1">Assets/Maps/Inland_Sea.lua</File>
     <File md5="3bd1d358cc1f8353c6e213e232f29c1d" import="1">Assets/Maps/Skirmish.lua</File>
     <File md5="9a926a64164f7a0b255835c4314db092" import="0">Lua/Micro_Beyond_Earth.lua</File>
-    <File md5="9c94bb6e9d58df4a57c9ff8bf5097c21" import="1">XML/Micro_Beyond_Earth.xml</File>
+    <File md5="008004d5004812edba34c8cbe98e185a" import="1">XML/Micro_Beyond_Earth.xml</File>
   </Files>
   <Actions>
     <OnModActivated>

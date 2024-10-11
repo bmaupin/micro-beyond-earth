@@ -85,6 +85,12 @@
             <Default>false</Default>
         </Row>
     </GameOptions>
+    <Improvements>
+        <Update>
+            <Where Type="IMPROVEMENT_EARTHLING_SETTLEMENT" />
+            <Set MinRangeToCity="0" />
+        </Update>
+    </Improvements>
     <Language_en_US>
         <Row Tag="TXT_KEY_GAME_OPTION_AUTO_UPGRADE_UNITS">
             <Text>Auto Upgrade Units</Text>
