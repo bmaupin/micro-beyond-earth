@@ -33,7 +33,7 @@ To reload changes to the mod without exiting Beyond Earth:
 
 1. Delete the mod directory and copy it over again with the new mod content
 
-   ⓘ It's that the mod directory get deleted, otherwise changes won't get picked up. If the mod doesn't show up in the Mods menu, run the command again and it should work. As best as I can tell, the command can be run at any time before the mod is loaded, even in the Mods menu itself.
+   ⓘ It's necessary that the mod directory get deleted, otherwise changes won't get picked up. If the mod doesn't show up in the Mods menu, run the command again until the mod shows up in the Mods menu (it may need to be run several times). As best as I can tell, the command can be run at any time before the mod is loaded, even in the Mods menu itself.
 
    e.g.
 
@@ -51,7 +51,7 @@ To reload changes to the mod without exiting Beyond Earth:
 1. Go to the _Mods_ menu
 1. Check the mod to enable it
 
-   ⓘ The mod should be unchecked to show that it has changed
+   ⓘ The mod should be unchecked to show that it has changed. If the mod was previously unchecked and you're not sure if the mod has been updated, you can check the box to enable the mod, run the command again, and you you should see that the mod is unchecked when it's been updated.
 
 ## Troubleshooting
 
