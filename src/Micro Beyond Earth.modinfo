@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Mod id="9412c9bf-a7b2-481e-b42e-431f06aac221" version="10">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="9412c9bf-a7b2-481e-b42e-431f06aac221" version="11">
   <Properties>
     <Name>Micro Beyond Earth</Name>
     <Stability>Alpha</Stability>
@@ -31,6 +31,7 @@
     <File md5="1d413af252fd07922071b3a136079910" import="1">Assets/Maps/Ice_Age.lua</File>
     <File md5="8f1eb87fdabeb92c64519fa71c700ebf" import="1">Assets/Maps/Inland_Sea.lua</File>
     <File md5="3bd1d358cc1f8353c6e213e232f29c1d" import="1">Assets/Maps/Skirmish.lua</File>
+    <File md5="cf10505bb0f6495d879745f26dcaabcf" import="0">Lua/AutomatedWarpGate.lua</File>
     <File md5="9a926a64164f7a0b255835c4314db092" import="0">Lua/Micro_Beyond_Earth.lua</File>
     <File md5="31088649bf7502810d3ad6c76f05e702" import="0">Lua/VictoriesAutomatedExodusGate.lua</File>
     <File md5="3727b43333c1c009c76d17370ea4d346" import="1">XML/Micro_Beyond_Earth.xml</File>
@@ -41,6 +42,10 @@
     </OnModActivated>
   </Actions>
   <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="Lua/AutomatedWarpGate.lua">
+      <Name>Automated Warp Gate</Name>
+      <Description>Automated Warp Gate</Description>
+    </EntryPoint>
     <EntryPoint type="InGameUIAddin" file="Lua/Micro_Beyond_Earth.lua">
       <Name>Logic</Name>
       <Description>Logic</Description>

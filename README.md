@@ -26,7 +26,8 @@ This is a mod to Sid Meier's Civilization: Beyond Earth to allow much shorter ga
 - New game options to start explorers and workers automated
 - Removes health bonuses and maluses and gives all health-related virtues if health is disabled
 - New game option to automate upgrading units
-- Purity affinity victory (Promised Land) has been modded to automatically summon Earthling settlers and to accomodate smaller map sizes
+- Purity affinity victory (Promised Land) has been modded to automatically summon Earthling settlers and to accommodate smaller map sizes
+- Supremacy affinity victory (Emancipation) automatically sends military units at the warp gate at the beginning of each turn
 
 #### Motivation
 
@@ -75,6 +76,7 @@ The Civilization series is one of my favourite game series, but I don't have the
 
 Because the map sizes are so drastically reduced, games will be very different. Depending on which map size is picked and how many other civs there are, some systems may not show up in the game at all, such as:
 
+- Alien nests
 - Artifacts
 - Marvels
 - Stations
@@ -113,10 +115,6 @@ Or:
 
 1. Go to [Releases](https://github.com/bmaupin/micro-beyond-earth/releases) and download the `.civbemod` file
 1. Copy it to Documents/My Games/Sid Meier's Civilization Beyond Earth/MODS
-
-## Wishlist
-
-- [ ] Mod supremacy victory condition to automatically send units through emancipation gate once they reach it
 
 ## Credits
 
