@@ -54,10 +54,10 @@ Events.SerialEventImprovementCreated.Add(OnImprovementCreated)
 -- Catch Exodus Gates being destroyed during the game session
 function OnImprovementDestroyed(iHexX, iHexY)
   local iX, iY = ToGridFromHex(iHexX, iHexY)
-  local pPlotIndex = Map.GetPlot(iX, iY):GetPlotIndex()
+  local iPlotIndex = Map.GetPlot(iX, iY):GetPlotIndex()
   
   for iPlayer = 0, GameDefines.MAX_MAJOR_CIVS-1, 1 do
-    pPlayer = Players[iPlayer]
+    local pPlayer = Players[iPlayer]
 	
     if (pPlayer:IsHuman() and g_ExodusGates[iPlayer] == iPlotIndex) then
       g_ExodusGates[iPlayer] = nil
@@ -79,15 +79,15 @@ function AutoSpawnEarthlings(iPlayer)
     end
 
     if (iEarthlingsCalled < (iEarthlingsNeeded + iEarthlingsExtra)) then
-	  local iPlotIndex = g_ExodusGates[iPlayer]
+	    local iPlotIndex = g_ExodusGates[iPlayer]
       local pPlot = Map.GetPlotByIndex(iPlotIndex)
 
       if (pPlot:GetImprovementType() == iExodusGate) then
         if (pPlayer:CanHandleLandmarkAction(iSpawnEarthlingAction, pPlot)) then
           pPlayer:HandleLandmarkAction(iSpawnEarthlingAction, iPlotIndex)
-		end
-	  else
-	    g_ExodusGates[iPlayer] = nil
+		    end
+	    else
+	      g_ExodusGates[iPlayer] = nil
       end
     end
   end
