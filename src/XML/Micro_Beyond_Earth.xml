@@ -146,6 +146,10 @@
         </Update>
     </Victories>
     <Worlds>
+        <!-- ⚠️ NOTE: At one point this mod was causing the game to crash just before the
+                      map ws shown. It seemed to be caused by using odd numbers in the map
+                      sizes, so it's probably best to only use even numbers and round up/
+                      down as needed. -->
         <Update>
             <Where Type="WORLDSIZE_DUEL" />
             <Set>
@@ -155,8 +159,8 @@
                 <GridHeight>8</GridHeight>
             </Set>
         </Update>
-        <!-- "Dwarf" -->
         <Update>
+            <!-- "Dwarf" -->
             <Where Type="WORLDSIZE_TINY" />
             <Set>
                 <GridWidth>16</GridWidth>
@@ -177,8 +181,8 @@
                 <GridHeight>16</GridHeight>
             </Set>
         </Update>
-        <!-- "Massive" -->
         <Update>
+            <!-- "Massive" -->
             <Where Type="WORLDSIZE_LARGE" />
             <Set>
                 <GridWidth>32</GridWidth>

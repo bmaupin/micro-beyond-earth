@@ -83,12 +83,6 @@ Because the map sizes are so drastically reduced, games will be very different. 
 
 If you wish to improve your chances of these systems being in the game, try playing on a larger map with fewer civs.
 
-#### Game crashes with `EXCEPTION_ACCESS_VIOLATION`
-
-This error can happen for a number of reasons, not always related to this mod.
-
-If an odd number is used for one of the values of the map size, it will cause the game to crash with this error just before the map is shown. The fix is to only use even numbers. This should be resolved but this note serves as a reminder in case the map sizes are adjusted in the future and this issue happens again.
-
 ## Manual installation
 
 #### Linux
