@@ -2,7 +2,23 @@
 
 https://partner.steamgames.com/doc/features/workshop/implementation
 
-#### Instructions
+#### Update an existing mod
+
+1. Check first to see if the Steam Workshop agreement has changes that need to be accepted
+
+   ⚠️ As best as I can tell, if there's a new version of the agreement and a new version of the mod is published before the agreement is agreed to, the mod will not be shown in the Steam workshop except by direct link, e.g. it will not be visible when browsing workshop items
+
+   1. Go here: [https://steamcommunity.com/workshop/workshoplegalagreement/](https://steamcommunity.com/workshop/workshoplegalagreement/)
+
+   1. If there are any new changes, accept them
+
+1. Publish a new version of the mod, e.g.
+
+   ```
+   ./steamremotestorage-uploader -a 65980 -i 3309221969 -f /path/to/Micro\ Beyond\ Earth\ \(v\ 2\).civbemod -n "v2: Version summary"
+   ```
+
+#### Publish a mod for the first time
 
 1. Package the content as needed
 
@@ -46,22 +62,6 @@ https://partner.steamgames.com/doc/features/workshop/implementation
 1. Later, upload screenshots
 
    https://steamcommunity.com/sharedfiles/filedetails/?id=2042081690
-
-#### Update an existing mod
-
-1. Check first to see if the Steam Workshop agreement has changes that need to be accepted
-
-   ⚠️ As best as I can tell, if there's a new version of the agreement and a new version of the mod is published before the agreement is agreed to, the mod will not be shown in the Steam workshop except by direct link, e.g. it will not be visible when browsing workshop items
-
-   1. Go here: [https://steamcommunity.com/workshop/workshoplegalagreement/](https://steamcommunity.com/workshop/workshoplegalagreement/)
-
-   1. If there are any new changes, accept them
-
-1. Publish a new version of the mod, e.g.
-
-   ```
-   ./steamremotestorage-uploader -a 65980 -i 3309221969 -f /path/to/Micro\ Beyond\ Earth\ \(v\ 2\).civbemod -n "v2: Version summary"
-   ```
 
 ## Troubleshooting
 
