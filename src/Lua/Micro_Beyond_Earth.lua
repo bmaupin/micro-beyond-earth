@@ -275,18 +275,18 @@ function AutoUpgradeUnits(playerID)
     end
 
     local MAX_UPGRADE_LEVELS = 3;
-	local purityAmt = player:GetAffinityLevel(GameInfo.Affinity_Types["AFFINITY_TYPE_PURITY"].ID);
-	local harmonyAmt = player:GetAffinityLevel(GameInfo.Affinity_Types["AFFINITY_TYPE_HARMONY"].ID);
-	local supremacyAmt = player:GetAffinityLevel(GameInfo.Affinity_Types["AFFINITY_TYPE_SUPREMACY"].ID);
-	local anyAmt = (purityAmt + harmonyAmt + supremacyAmt);
+    local purityAmt = player:GetAffinityLevel(GameInfo.Affinity_Types["AFFINITY_TYPE_PURITY"].ID);
+    local harmonyAmt = player:GetAffinityLevel(GameInfo.Affinity_Types["AFFINITY_TYPE_HARMONY"].ID);
+    local supremacyAmt = player:GetAffinityLevel(GameInfo.Affinity_Types["AFFINITY_TYPE_SUPREMACY"].ID);
+    local anyAmt = (purityAmt + harmonyAmt + supremacyAmt);
 
-	if (player:HasAnyPendingUpgrades()) then
-	    for unitInfo in GameInfo.Units() do
+    if (player:HasAnyPendingUpgrades()) then
+        for unitInfo in GameInfo.Units() do
             local hasPendingUpgrade = player:DoesUnitHavePendingUpgrades(unitInfo.ID, -1, true);
 
             if hasPendingUpgrade then
                 -- Store which upgrade tier is next (the one pending for upgrade)
-                local nextLevel	= 0;
+                local nextLevel = 0;
                 -- Total number of upgrade tiers for the unit
                 local numLevels = 0;
                 for iLevel = 1, MAX_UPGRADE_LEVELS do
@@ -317,9 +317,9 @@ function AutoUpgradeUnits(playerID)
 
                         local isPurchasable =
                             upgrade.AnyAffinityLevel <= anyAmt and
-                            upgrade.PurityLevel		<= purityAmt and
-                            upgrade.HarmonyLevel	<= harmonyAmt and
-                            upgrade.SupremacyLevel	<= supremacyAmt;
+                            upgrade.PurityLevel      <= purityAmt and
+                            upgrade.HarmonyLevel     <= harmonyAmt and
+                            upgrade.SupremacyLevel   <= supremacyAmt;
 
                         if isPurchasable then
                             numPurchasableUpgrades = numPurchasableUpgrades + 1;
@@ -330,7 +330,7 @@ function AutoUpgradeUnits(playerID)
                     -- Only auto upgrade if there's exactly one available upgrade tier
                     if numPurchasableUpgrades == 1 then
                         -- Get the available perks for the upgrade and pick a random one
-                        local perkTypes	= player:GetPerksForUpgrade(availableUpgradeId);
+                        local perkTypes = player:GetPerksForUpgrade(availableUpgradeId);
                         local randomIndex = math.random(#perkTypes);
                         local randomPerkId = perkTypes[randomIndex];
 
@@ -346,7 +346,7 @@ function AutoUpgradeUnits(playerID)
                     end
                 end
             end
-	    end
-	end
+        end
+    end
 end
 GameEvents.PlayerDoTurn.Add(AutoUpgradeUnits);
