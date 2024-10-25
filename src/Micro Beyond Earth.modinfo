@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="9412c9bf-a7b2-481e-b42e-431f06aac221" version="11">
+<Mod id="9412c9bf-a7b2-481e-b42e-431f06aac221" version="12">
   <Properties>
     <Name>Micro Beyond Earth</Name>
     <Stability>Alpha</Stability>
@@ -32,7 +32,7 @@
     <File md5="8f1eb87fdabeb92c64519fa71c700ebf" import="1">Assets/Maps/Inland_Sea.lua</File>
     <File md5="3bd1d358cc1f8353c6e213e232f29c1d" import="1">Assets/Maps/Skirmish.lua</File>
     <File md5="cf10505bb0f6495d879745f26dcaabcf" import="0">Lua/AutomatedWarpGate.lua</File>
-    <File md5="9a926a64164f7a0b255835c4314db092" import="0">Lua/Micro_Beyond_Earth.lua</File>
+    <File md5="eb4bd3853cc7ecb95d454e9f114de358" import="0">Lua/Micro_Beyond_Earth.lua</File>
     <File md5="31088649bf7502810d3ad6c76f05e702" import="0">Lua/VictoriesAutomatedExodusGate.lua</File>
     <File md5="2378a0205f796f831a3688f034294cc0" import="1">XML/Micro_Beyond_Earth.xml</File>
   </Files>

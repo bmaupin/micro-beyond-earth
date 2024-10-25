@@ -303,8 +303,8 @@ function AutoUpgradeUnits(playerID)
                     end
                 end
 
-                -- Only auto upgrade if this is not the last upgrade tier for the unit
-                if nextLevel < numLevels then
+                -- Loop through all pending upgrades, but stop before the last level
+                while nextLevel < numLevels do
                     -- Get available upgrades for the pending upgrade tier
                     local upgradeTypes = player:GetUpgradesForUnitClassLevel(unitInfo.ID, nextLevel);
 
@@ -327,7 +327,7 @@ function AutoUpgradeUnits(playerID)
                         end
                     end
 
-                    -- Only auto upgrade if there's exactly one available upgrade tier
+                    -- Only auto-upgrade if there's exactly one available upgrade tier
                     if numPurchasableUpgrades == 1 then
                         -- Get the available perks for the upgrade and pick a random one
                         local perkTypes = player:GetPerksForUpgrade(availableUpgradeId);
@@ -344,6 +344,9 @@ function AutoUpgradeUnits(playerID)
                             player:AssignUnitUpgrade(unitInfo.ID, availableUpgradeId, randomPerkId);
                         end
                     end
+
+                    -- Move to the next level for further upgrades
+                    nextLevel = nextLevel + 1;
                 end
             end
         end
