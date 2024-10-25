@@ -31,8 +31,8 @@
     <File md5="1d413af252fd07922071b3a136079910" import="1">Assets/Maps/Ice_Age.lua</File>
     <File md5="8f1eb87fdabeb92c64519fa71c700ebf" import="1">Assets/Maps/Inland_Sea.lua</File>
     <File md5="3bd1d358cc1f8353c6e213e232f29c1d" import="1">Assets/Maps/Skirmish.lua</File>
-    <File md5="cf10505bb0f6495d879745f26dcaabcf" import="0">Lua/AutomatedWarpGate.lua</File>
-    <File md5="eb4bd3853cc7ecb95d454e9f114de358" import="0">Lua/Micro_Beyond_Earth.lua</File>
+    <File md5="02d2484c2ac2076d358ef5371b605573" import="0">Lua/AutomatedWarpGate.lua</File>
+    <File md5="d5655635179e425da79daad2ca33ffdb" import="0">Lua/Micro_Beyond_Earth.lua</File>
     <File md5="31088649bf7502810d3ad6c76f05e702" import="0">Lua/VictoriesAutomatedExodusGate.lua</File>
     <File md5="2378a0205f796f831a3688f034294cc0" import="1">XML/Micro_Beyond_Earth.xml</File>
   </Files>

@@ -19,7 +19,7 @@ function AbortCovertOperations(playerID)
                     operation.Type ~= GameInfo.CovertOperations["COVERT_OPERATION_ESTABLISH_NETWORK"].ID and
                     operation.Type ~= GameInfo.CovertOperations["COVERT_OPERATION_EXTRACT_OPERATIVE"].ID) then
                     local operationInfo = GameInfo.CovertOperations[operation.Type]
-                    print("(Micro Beyond Earth) Aborting covert operation " .. operationInfo.Type .. " for player " .. playerID);
+                    print("(Micro Beyond Earth) Aborting covert operation " .. operationInfo.Type .. " for player " .. playerID .. " (" .. player:GetName() .. ")");
                     agent:AbortOperation();
                 end
             end
@@ -178,14 +178,14 @@ function ResetHealth(playerID)
         player:ChangeExtraHealthPerCity(adjustment);
         local newExcessHealth = totalHealth + (adjustment * numCities);
 
-        print("(Micro Beyond Earth) Adjusting health for player " .. playerID .. ", was: " .. totalHealth .. ", now: " .. newExcessHealth);
+        print("(Micro Beyond Earth) Adjusting health for player " .. playerID .. " (" .. player:GetName() .. ")" .. ", was: " .. totalHealth .. ", now: " .. newExcessHealth);
 
     elseif totalHealth > maxTotalHealth then
         local adjustment = math.floor(totalHealth / numCities) * -1;
         player:ChangeExtraHealthPerCity(adjustment);
         local newExcessHealth = totalHealth + (adjustment * numCities);
 
-        print("(Micro Beyond Earth) Adjusting health for player " .. playerID .. ", was: " .. totalHealth .. ", now: " .. newExcessHealth);
+        print("(Micro Beyond Earth) Adjusting health for player " .. playerID .. " (" .. player:GetName() .. ")" .. ", was: " .. totalHealth .. ", now: " .. newExcessHealth);
     end
 end
 GameEvents.PlayerDoTurn.Add(ResetHealth);
