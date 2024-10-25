@@ -34,7 +34,7 @@
     <File md5="02d2484c2ac2076d358ef5371b605573" import="0">Lua/AutomatedWarpGate.lua</File>
     <File md5="d5655635179e425da79daad2ca33ffdb" import="0">Lua/Micro_Beyond_Earth.lua</File>
     <File md5="31088649bf7502810d3ad6c76f05e702" import="0">Lua/VictoriesAutomatedExodusGate.lua</File>
-    <File md5="2378a0205f796f831a3688f034294cc0" import="1">XML/Micro_Beyond_Earth.xml</File>
+    <File md5="4c14b5f0509d6740dd572ac879c63062" import="1">XML/Micro_Beyond_Earth.xml</File>
   </Files>
   <Actions>
     <OnModActivated>

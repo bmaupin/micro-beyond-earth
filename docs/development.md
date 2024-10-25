@@ -2,6 +2,10 @@
 
 ## Development
 
+#### Avoid duel and dwarf map sizes
+
+To prevent the game from crashing, avoid duel and dwarf map sizes when creating new games for development purposes, because it's likely the game will need to be saved and reloaded multiple times and this is what triggers the crash. See [../README.md](../README.md) for more information.
+
 #### Set up Lua extension for Visual Studio Code
 
 ⓘ This is recommended as any syntax errors in Lua code can cause Beyond Earth to crash

@@ -72,6 +72,14 @@ The Civilization series is one of my favourite game series, but I don't have the
 
 ## Known issues
 
+#### Game crash or abnormal terrain when loading save second time
+
+The map sizes in this mod are so small that if a save game created with this mod is loaded, subsequent loading of save games (even save games not created with this mod) may cause the game to crash or exhibit terrain abnormalities. While this could potentially be fixed by increasing map sizes, the map sizes are intentionally very small in order to enable finishing the game in just one session, and it's not clear what the exact cause is or if increasing the map sizes would make the issue go away or just make it less frequent.
+
+If the game crashes when loading a save with this mod enabled, simply start the game again and load the save again. As long as the save is only loaded once it shouldn't cause any issues.
+
+The issue appears to occur more frequently with the smaller map sizes such as duel and dwarf, so avoiding those map sizes should reduce changes of encountering this problem.
+
 #### Missing game features
 
 Because the map sizes are so drastically reduced, games will be very different. Depending on which map size is picked and how many other civs there are, some systems may not show up in the game at all, such as:

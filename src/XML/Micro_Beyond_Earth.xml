@@ -147,14 +147,12 @@
     </Victories>
     <Worlds>
         <!-- ⚠️ NOTE: At one point this mod was causing the game to crash just before the
-                      map ws shown. It seemed to be caused by using odd numbers in the map
-                      sizes, so it's probably best to only use even numbers and round up/
-                      down as needed. -->
+                      map was shown. It seemed to be caused by using odd numbers in the
+                      map sizes, so it's probably best to only use even numbers and round
+                      up/down as needed. -->
         <Update>
             <Where Type="WORLDSIZE_DUEL" />
             <Set>
-                <!-- 16 seems to be the smallest width that doesn't cause crashes
-                     (https://github.com/bmaupin/micro-beyond-earth/issues/7) -->
                 <GridWidth>16</GridWidth>
                 <GridHeight>8</GridHeight>
             </Set>
