@@ -1,6 +1,6 @@
 # Micro Beyond Earth
 
-💡 [See my other Civ projects here](https://github.com/search?q=user%3Abmaupin+topic%3Acivilization&type=Repositories)
+📌 [See my other Civ projects here](https://github.com/search?q=user%3Abmaupin+topic%3Acivilization&type=Repositories)
 
 This is a mod to Sid Meier's Civilization: Beyond Earth to allow much shorter games. Features include:
 
@@ -113,7 +113,7 @@ The map sizes in this mod are so small that if a save game created with this mod
 
 If the game crashes when loading a save with this mod enabled, simply start the game again and load the save again. As long as the save is only loaded once it shouldn't cause any issues.
 
-The issue appears to occur more frequently with the smaller map sizes such as duel and dwarf, so avoiding those map sizes should reduce changes of encountering this problem.
+The issue appears to occur more frequently with the smaller map sizes such as duel and dwarf, so avoiding those map sizes should reduce chances of encountering this problem.
 
 #### Missing game features
 
