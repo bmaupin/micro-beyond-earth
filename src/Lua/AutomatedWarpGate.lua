@@ -73,7 +73,7 @@ function AutoSendMilitaryUnit(iPlayer)
           local pUnit = pPlot:GetUnit(i)
 
           if (pUnit:IsCombatUnit() and pUnit:GetOwner() == iPlayer) then
-            print("(Micro Beyond Earth) Automatically sending unit " ..  pUnit:GetName() .. " through warp gate for player " .. iPlayer .. " (" .. pPlayer:GetName() .. ")")
+            print("(Mini Beyond Earth) Automatically sending unit " ..  pUnit:GetName() .. " through warp gate for player " .. iPlayer .. " (" .. pPlayer:GetName() .. ")")
             -- Send the player's unit through the Warp Gate
             pPlayer:HandleLandmarkAction(iWarpGateAction, iPlotIndex)
             -- We can only send one unit through per turn

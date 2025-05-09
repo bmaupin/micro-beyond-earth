@@ -1,4 +1,4 @@
-# Micro Beyond Earth
+# Mini Beyond Earth
 
 📌 [See my other Civ projects here](https://github.com/search?q=user%3Abmaupin+topic%3Acivilization&type=Repositories)
 
@@ -27,7 +27,7 @@ I don't have time to play a 10-15 hour game of Civilization and short 4X games (
 ## Usage
 
 1. Start Beyond Earth and go to the _Mods_ menu
-1. Check _Micro Beyond Earth_ and any other desired mods
+1. Check _Mini Beyond Earth_ and any other desired mods
 1. Before starting a game, click _Advanced Setup_ to configure additional game options, e.g
 
    - _Game Pace_ > _Quick_
@@ -130,7 +130,7 @@ If you wish to improve your chances of these systems being in the game, try play
 
 #### Linux
 
-Download the repository source file from [Releases](https://github.com/bmaupin/micro-beyond-earth/releases), extract it, and then run the install script:
+Download the repository source file from [Releases](https://github.com/bmaupin/mini-beyond-earth/releases), extract it, and then run the install script:
 
 ```
 ./scripts/install-mod.sh
@@ -138,10 +138,10 @@ Download the repository source file from [Releases](https://github.com/bmaupin/m
 
 Or:
 
-1. Go to [Releases](https://github.com/bmaupin/micro-beyond-earth/releases) and download the `.civbemod` file
-1. Get the version of the mod from [src/Micro Beyond Earth.modinfo](src/Micro%20Beyond%20Earth.modinfo)
+1. Go to [Releases](https://github.com/bmaupin/mini-beyond-earth/releases) and download the `.civbemod` file
+1. Get the version of the mod from [src/Mini Beyond Earth.modinfo](src/Mini%20Beyond%20Earth.modinfo)
    - It's add the end of the `Mod` element, e.g. `version="1"`
-1. Create a new directory named `Micro Beyond Earth (v 1)`
+1. Create a new directory named `Mini Beyond Earth (v 1)`
    - 👉 Update the value after `(v ` with the version from the previous step
 1. Extract the contents of the `.civbemod` file to the directory you created (it's compressed using 7zip)
 1. Move the directory to the mods directory
@@ -150,7 +150,7 @@ Or:
 
 #### Windows
 
-1. Go to [Releases](https://github.com/bmaupin/micro-beyond-earth/releases) and download the `.civbemod` file
+1. Go to [Releases](https://github.com/bmaupin/mini-beyond-earth/releases) and download the `.civbemod` file
 1. Copy it to Documents/My Games/Sid Meier's Civilization Beyond Earth/MODS
 
 ## Credits

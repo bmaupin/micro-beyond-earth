@@ -19,7 +19,7 @@ function AbortCovertOperations(playerID)
                     operation.Type ~= GameInfo.CovertOperations["COVERT_OPERATION_ESTABLISH_NETWORK"].ID and
                     operation.Type ~= GameInfo.CovertOperations["COVERT_OPERATION_EXTRACT_OPERATIVE"].ID) then
                     local operationInfo = GameInfo.CovertOperations[operation.Type]
-                    print("(Micro Beyond Earth) Aborting covert operation " .. operationInfo.Type .. " for player " .. playerID .. " (" .. player:GetName() .. ")");
+                    print("(Mini Beyond Earth) Aborting covert operation " .. operationInfo.Type .. " for player " .. playerID .. " (" .. player:GetName() .. ")");
                     agent:AbortOperation();
                 end
             end
@@ -112,7 +112,7 @@ function OnUnitCreated(playerID, unitID)
 
                 -- If the unit isn't automated, first check that we can automated it
                 elseif unit:CanDoCommand(CommandTypes.COMMAND_AUTOMATE, 1) then
-                    print("(Micro Beyond Earth) Automating explorer");
+                    print("(Mini Beyond Earth) Automating explorer");
                     -- 1 = AutomateTypes.AUTOMATE_EXPLORE in CvEnums.h (from Civ 5 SDK)
                     unit:DoCommand(CommandTypes.COMMAND_AUTOMATE, 1);
 
@@ -133,7 +133,7 @@ function OnUnitCreated(playerID, unitID)
                     automatedUnits[unitID] = true;
 
                 elseif unit:CanDoCommand(CommandTypes.COMMAND_AUTOMATE, 0) then
-                    print("(Micro Beyond Earth) Automating worker");
+                    print("(Mini Beyond Earth) Automating worker");
                     -- 0 = AutomateTypes.AUTOMATE_BUILD in CvEnums.h (from Civ 5 SDK)
                     unit:DoCommand(CommandTypes.COMMAND_AUTOMATE, 0);
 
@@ -178,14 +178,14 @@ function ResetHealth(playerID)
         player:ChangeExtraHealthPerCity(adjustment);
         local newExcessHealth = totalHealth + (adjustment * numCities);
 
-        print("(Micro Beyond Earth) Adjusting health for player " .. playerID .. " (" .. player:GetName() .. ")" .. ", was: " .. totalHealth .. ", now: " .. newExcessHealth);
+        print("(Mini Beyond Earth) Adjusting health for player " .. playerID .. " (" .. player:GetName() .. ")" .. ", was: " .. totalHealth .. ", now: " .. newExcessHealth);
 
     elseif totalHealth > maxTotalHealth then
         local adjustment = math.floor(totalHealth / numCities) * -1;
         player:ChangeExtraHealthPerCity(adjustment);
         local newExcessHealth = totalHealth + (adjustment * numCities);
 
-        print("(Micro Beyond Earth) Adjusting health for player " .. playerID .. " (" .. player:GetName() .. ")" .. ", was: " .. totalHealth .. ", now: " .. newExcessHealth);
+        print("(Mini Beyond Earth) Adjusting health for player " .. playerID .. " (" .. player:GetName() .. ")" .. ", was: " .. totalHealth .. ", now: " .. newExcessHealth);
     end
 end
 GameEvents.PlayerDoTurn.Add(ResetHealth);
@@ -340,7 +340,7 @@ function AutoUpgradeUnits(playerID)
                         if not hasUpgrade and not hasPerk then
                             local upgrade = GameInfo.UnitUpgrades[availableUpgradeId];
                             local perk = GameInfo.UnitPerks[randomPerkId];
-                            print("(Micro Beyond Earth) Auto upgrading unit " .. unitInfo.Type .. " with upgrade " .. upgrade.Type .. " and perk " .. perk.Type);
+                            print("(Mini Beyond Earth) Auto upgrading unit " .. unitInfo.Type .. " with upgrade " .. upgrade.Type .. " and perk " .. perk.Type);
                             player:AssignUnitUpgrade(unitInfo.ID, availableUpgradeId, randomPerkId);
                         end
                     end

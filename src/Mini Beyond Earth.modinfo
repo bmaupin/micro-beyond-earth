@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="9412c9bf-a7b2-481e-b42e-431f06aac221" version="12">
+<Mod id="9412c9bf-a7b2-481e-b42e-431f06aac221" version="13">
   <Properties>
-    <Name>Micro Beyond Earth</Name>
+    <Name>Mini Beyond Earth</Name>
     <Stability>Alpha</Stability>
     <Teaser>Play Beyond Earth with tiny maps</Teaser>
     <Description>Play Beyond Earth with extremely small maps and additional game options for much shorter games.</Description>
@@ -31,14 +31,14 @@
     <File md5="1d413af252fd07922071b3a136079910" import="1">Assets/Maps/Ice_Age.lua</File>
     <File md5="8f1eb87fdabeb92c64519fa71c700ebf" import="1">Assets/Maps/Inland_Sea.lua</File>
     <File md5="3bd1d358cc1f8353c6e213e232f29c1d" import="1">Assets/Maps/Skirmish.lua</File>
-    <File md5="02d2484c2ac2076d358ef5371b605573" import="0">Lua/AutomatedWarpGate.lua</File>
-    <File md5="d5655635179e425da79daad2ca33ffdb" import="0">Lua/Micro_Beyond_Earth.lua</File>
+    <File md5="1d78e43069f24547e65a6e17c9601c58" import="0">Lua/AutomatedWarpGate.lua</File>
+    <File md5="9a387e24a6267dfdc349c2df1837e732" import="0">Lua/Mini_Beyond_Earth.lua</File>
     <File md5="31088649bf7502810d3ad6c76f05e702" import="0">Lua/VictoriesAutomatedExodusGate.lua</File>
-    <File md5="4c14b5f0509d6740dd572ac879c63062" import="1">XML/Micro_Beyond_Earth.xml</File>
+    <File md5="4c14b5f0509d6740dd572ac879c63062" import="1">XML/Mini_Beyond_Earth.xml</File>
   </Files>
   <Actions>
     <OnModActivated>
-      <UpdateDatabase>XML/Micro_Beyond_Earth.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Mini_Beyond_Earth.xml</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>
@@ -46,7 +46,7 @@
       <Name>Automated Warp Gate</Name>
       <Description>Automated Warp Gate</Description>
     </EntryPoint>
-    <EntryPoint type="InGameUIAddin" file="Lua/Micro_Beyond_Earth.lua">
+    <EntryPoint type="InGameUIAddin" file="Lua/Mini_Beyond_Earth.lua">
       <Name>Logic</Name>
       <Description>Logic</Description>
     </EntryPoint>
